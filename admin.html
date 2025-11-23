@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LMS Pro – Admin Portal</title>
+
+  <!-- External CSS (must exist in same folder) -->
+  <link rel="stylesheet" href="styles.css" />
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+</head>
+<body>
+  <!-- NAVBAR (Admin active) -->
+  <nav>
+    <div class="container">
+      <div class="nav-content">
+        <div class="logo" onclick="window.location.href='index.html'">📚 AlphaLMS Pro</div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+          <li><button onclick="window.location.href='index.html'">Home</button></li>
+          <li><button onclick="window.location.href='features.html'">Features</button></li>
+          <li><button class="active" onclick="window.location.href='admin.html'">Admin Portal</button></li>
+          <li><button onclick="window.location.href='student.html'">Student Portal</button></li>
+          <li>
+            <button class="nav-cta-button" onclick="window.location.href='contact.html'">
+              Request Demo
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ADMIN HERO (from original page-admin) -->
+  <section class="hero hero-dashboard" style="padding: 158px 0;">
+    <div class="hero-content">
+      <div class="container">
+        <h1 style="font-size: 42px; margin-bottom: 20px;margin-top: 45px;">Admin Control Center</h1>
+        <p style="font-size: 18px;">
+          Manage all aspects of your healthcare training platform from one powerful dashboard.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADMIN LAYOUT GRID -->
+  <!-- Important: ONLY ONE <main class="admin-layout">, no extra wrapper main/section -->
+  <main class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar-full">
+      <div class="sidebar-section">
+        <h3>Management</h3>
+      <div class="sidebar-item active" onclick="switchAdminView('courses', this)">
+  <span>📚</span> Courses
+</div>
+<div class="sidebar-item" onclick="switchAdminView('students', this)">
+  <span>👥</span> Students
+</div>
+<div class="sidebar-item" onclick="switchAdminView('instructors', this)">
+  <span>👨‍🏫</span> Instructors
+</div>
+
+<div class="sidebar-section">
+  <h3>Content</h3>
+  <div class="sidebar-item" onclick="switchAdminView('modules', this)">
+    <span>📖</span> Modules
+  </div>
+  <div class="sidebar-item" onclick="switchAdminView('assignments', this)">
+    <span>📝</span> Assignments
+  </div>
+  <div class="sidebar-item" onclick="switchAdminView('quizzes', this)">
+    <span>❓</span> Quizzes
+  </div>
+</div>
+
+<div class="sidebar-section">
+  <h3>Analytics</h3>
+  <div class="sidebar-item" onclick="switchAdminView('reports', this)">
+    <span>📊</span> Reports
+  </div>
+</div>
+
+      </div>
+    </aside>
+
+    <!-- Main content area -->
+    <div class="container">
+      <div class="admin-content" id="admin-content-area">
+        <div class="page-header">
+          <h1>Course Management</h1>
+          <p>Create, edit, and manage all your courses from this panel.</p>
+        </div>
+
+        <div class="data-table">
+          <div class="data-table-header">
+            <div>Course Name</div>
+            <div>Enrolled Students</div>
+            <div>Status</div>
+            <div>Actions</div>
+          </div>
+
+          <div class="data-table-row">
+            <div>
+              <strong>Web Development Bootcamp</strong><br>
+              <small style="color: #94a3b8;">12 modules • 45 lessons</small>
+            </div>
+            <div>324</div>
+            <div><span class="status-badge status-active">Active</span></div>
+            <div class="action-buttons">
+              <button class="btn-icon btn-edit" onclick="showEditMessage()">✏️ Edit</button>
+              <button class="btn-icon btn-delete" onclick="showDeleteConfirm()">🗑️ Delete</button>
+            </div>
+          </div>
+
+          <div class="data-table-row">
+            <div>
+              <strong>Digital Marketing Mastery</strong><br>
+              <small style="color: #94a3b8;">8 modules • 32 lessons</small>
+            </div>
+            <div>198</div>
+            <div><span class="status-badge status-active">Active</span></div>
+            <div class="action-buttons">
+              <button class="btn-icon btn-edit" onclick="showEditMessage()">✏️ Edit</button>
+              <button class="btn-icon btn-delete" onclick="showDeleteConfirm()">🗑️ Delete</button>
+            </div>
+          </div>
+
+          <div class="data-table-row">
+            <div>
+              <strong>Data Science Fundamentals</strong><br>
+              <small style="color: #94a3b8;">10 modules • 38 lessons</small>
+            </div>
+            <div>256</div>
+            <div><span class="status-badge status-active">Active</span></div>
+            <div class="action-buttons">
+              <button class="btn-icon btn-edit" onclick="showEditMessage()">✏️ Edit</button>
+              <button class="btn-icon btn-delete" onclick="showDeleteConfirm()">🗑️ Delete</button>
+            </div>
+          </div>
+
+          <div class="data-table-row">
+            <div>
+              <strong>UI/UX Design Principles</strong><br>
+              <small style="color: #94a3b8;">6 modules • 24 lessons</small>
+            </div>
+            <div>142</div>
+            <div><span class="status-badge status-pending">Draft</span></div>
+            <div class="action-buttons">
+              <button class="btn-icon btn-edit" onclick="showEditMessage()">✏️ Edit</button>
+              <button class="btn-icon btn-delete" onclick="showDeleteConfirm()">🗑️ Delete</button>
+            </div>
+          </div>
+
+          <div class="data-table-row">
+            <div>
+              <strong>Mobile App Development</strong><br>
+              <small style="color: #94a3b8;">14 modules • 52 lessons</small>
+            </div>
+            <div>389</div>
+            <div><span class="status-badge status-active">Active</span></div>
+            <div class="action-buttons">
+              <button class="btn-icon btn-edit" onclick="showEditMessage()">✏️ Edit</button>
+              <button class="btn-icon btn-delete" onclick="showDeleteConfirm()">🗑️ Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER (same as main site, trimmed if you like) -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Resources</h3>
+          <a href="#" onclick="event.preventDefault(); showSuccessModal('Coming Soon', 'Documentation and resources will be available in the full LMS platform.', 'home')">Documentation</a>
+          <a href="#" onclick="event.preventDefault(); showSuccessModal('Coming Soon', 'API access will be available for premium users.', 'home')">API</a>
+          <a href="#" onclick="event.preventDefault(); showSuccessModal('Coming Soon', 'Support center coming soon!', 'home')">Support Center</a>
+          <a href="#" onclick="event.preventDefault(); showSuccessModal('Coming Soon', 'Community forum launching soon!', 'home')">Community</a>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>📧 hello@lmspro.com</p>
+          <p>📞 +1 (555) 123-4567</p>
+          <p>📍 San Francisco, CA</p>
+          <div style="margin-top: 20px; display: flex; gap: 16px; font-size: 24px;">
+            <a href="#" onclick="event.preventDefault();" style="transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">🐦</a>
+            <a href="#" onclick="event.preventDefault();" style="transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">💼</a>
+            <a href="#" onclick="event.preventDefault();" style="transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">📘</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2024 LMS Pro. All rights reserved. Empowering education worldwide.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shared JS -->
+  <script src="script.js"></script>
+</body>
+</html>

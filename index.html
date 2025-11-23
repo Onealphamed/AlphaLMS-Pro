@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>
+      Learning Management System - Professional LMS Solution
+    </title>
+
+    <!-- Platform SDKs (keep if required by your hosting platform) -->
+    <script src="/_sdk/element_sdk.js"></script>
+    <script src="/_sdk/data_sdk.js"></script>
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- View transitions -->
+    <style>
+      @view-transition {
+        navigation: auto;
+      }
+    </style>
+
+    <!-- Tailwind (as you had it) -->
+    <script
+      src="https://cdn.tailwindcss.com"
+      type="text/javascript"></script>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav>
+      <div class="container">
+        <div class="nav-content">
+          <!-- Logo -->
+          <div
+            class="logo"
+            onclick="window.location.href='index.html'">
+            📚 LMS Pro
+          </div>
+
+          <!-- Mobile hamburger -->
+          <button
+            class="nav-toggle"
+            aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <!-- Nav links -->
+          <ul class="nav-links">
+            <li>
+              <button
+                class="active"
+                onclick="window.location.href='index.html'">
+                Home
+              </button>
+            </li>
+            <li>
+              <button onclick="window.location.href='features.html'">
+                Features
+              </button>
+            </li>
+            <li>
+              <button onclick="window.location.href='admin.html'">
+                Admin Portal
+              </button>
+            </li>
+            <li>
+              <button onclick="window.location.href='student.html'">
+                Student Portal
+              </button>
+            </li>
+          
+            <li>
+              <button
+                class="nav-cta-button"
+                onclick="window.location.href='contact.html'">
+                Request Demo
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HOME PAGE WRAPPER -->
+    <div id="page-home" class="page active">
+      <!-- HERO SECTION -->
+      <section class="hero hero-home">
+        <div class="hero-content">
+          <div class="container">
+            <h1 id="main-title">
+              Transform Healthcare Education With Our Complete LMS
+            </h1>
+            <p id="subtitle">
+              Build, manage, and scale your medical training academy with
+              powerful tools designed for healthcare professionals and
+              learners.
+            </p>
+            <button
+              class="cta-button"
+              id="cta-button"
+              onclick="window.location.href='contact.html'">
+              Start Your Journey Today
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES SECTION -->
+      <section class="services-section">
+        <div class="container">
+          <h2 class="section-title">Our Services</h2>
+          <p class="section-subtitle">
+            Comprehensive learning solutions powered by cutting-edge
+            technology
+          </p>
+
+          <div class="services-grid">
+            <!-- Service 1 -->
+            <div class="service-card">
+              <img
+                src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&q=80"
+                alt="Online Courses Platform"
+                class="service-image" />
+              <div class="service-content">
+                <span class="service-badge">FEATURED</span>
+                <h3>Online Course Platform</h3>
+                <p>
+                  Access professionally designed courses across multiple
+                  disciplines. Learn at your own pace with interactive
+                  lessons, video content, and AI-powered recommendations.
+                </p>
+              </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-card">
+              <img
+                src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=800&q=80"
+                alt="Web Platform"
+                class="service-image" />
+              <div class="service-content">
+                <span class="service-badge">WEB PLATFORM</span>
+                <h3>Custom Website Solutions</h3>
+                <p>
+                  Fully branded learning portals with your logo, colors,
+                  and domain. White-label solutions available for complete
+                  customization.
+                </p>
+              </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-card">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
+                alt="Advanced Analytics"
+                class="service-image" />
+              <div class="service-content">
+                <span class="service-badge">ANALYTICS</span>
+                <h3>Advanced Analytics</h3>
+                <p>
+                  Deep insights into learner performance and engagement
+                  with detailed reports and real-time dashboards.
+                </p>
+              </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="service-card">
+              <img
+                src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80"
+                alt="Certifications"
+                class="service-image" />
+              <div class="service-content">
+                <span class="service-badge">CERTIFICATIONS</span>
+                <h3>Digital Certificates</h3>
+                <p>
+                  Award digital certificates and badges to recognize
+                  achievements. Automated certificate generation with
+                  custom branding and verification.
+                </p>
+              </div>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="service-card">
+              <img
+                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80"
+                alt="Discussion Forums"
+                class="service-image" />
+              <div class="service-content">
+                <span class="service-badge">COMMUNITY</span>
+                <h3>Online Discussion Forums</h3>
+                <p>
+                  Foster community engagement with built-in forums and
+                  Q&A functionality. Enable peer-to-peer learning and
+                  collaboration.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+  
+<!-- CLINICAL LEARNING HUB – DAILY MEDICAL INSIGHTS -->
+<section class="clinical-hub reveal" id="clinical-hub">
+  <div class="container">
+    <h2 class="section-title">Clinical Learning Hub — Daily Medical Insights</h2>
+    <p class="section-subtitle">
+      Bite-sized updates, case stories, and expert perspectives designed for busy clinicians.
+    </p>
+
+    <div class="hub-grid">
+      <!-- FDA Approval Updates -->
+      <article class="hub-card">
+        <span class="hub-badge">Regulatory</span>
+        <h3>FDA Approval Updates</h3>
+        <p>Stay ahead of new drug approvals, label expansions, and safety communications.</p>
+        <button class="hub-link">View latest approvals →</button>
+      </article>
+
+      <!-- Case of the Week -->
+      <article class="hub-card">
+        <span class="hub-badge">Case-Based</span>
+        <h3>Case of the Week</h3>
+        <p>Real-world scenarios with stepwise reasoning and take-home messages.</p>
+        <button class="hub-link">Explore this week’s case →</button>
+      </article>
+
+      <!-- KOL Briefings -->
+      <article class="hub-card">
+        <span class="hub-badge">KOL Insights</span>
+        <h3>KOL Briefings</h3>
+        <p>Short video capsules from experts on guidelines, controversies, and grey zones.</p>
+        <button class="hub-link">Watch expert clips →</button>
+      </article>
+
+      <!-- Research Summaries -->
+      <article class="hub-card">
+        <span class="hub-badge">Evidence</span>
+        <h3>Research Summaries</h3>
+        <p>High-impact trials distilled into quick, practice-ready synopses.</p>
+        <button class="hub-link">Read key papers →</button>
+      </article>
+
+      <!-- CME Calendar -->
+      <article class="hub-card">
+        <span class="hub-badge">CME</span>
+        <h3>CME Calendar</h3>
+        <p>Upcoming webinars, hybrid CMEs, and on-demand learning with credits.</p>
+        <button class="hub-link">Browse upcoming CMEs →</button>
+      </article>
+
+      <!-- Pharma Launch Insights -->
+      <article class="hub-card">
+        <span class="hub-badge">Market</span>
+        <h3>Pharma Launch Insights</h3>
+        <p>Launch trackers, brand stories, and market-shaping innovation in therapeutics.</p>
+        <button class="hub-link">See launch highlights →</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>About LMS Pro</h3>
+            <p>
+              Empowering educators and healthcare professionals with
+              cutting-edge learning management technology. Build your
+              medical academy with confidence.
+            </p>
+          </div>
+
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <a
+              href="#"
+              onclick="event.preventDefault(); window.location.href='index.html'">
+              Home
+            </a>
+            <a
+              href="#"
+              onclick="event.preventDefault(); window.location.href='features.html'">
+              Features
+            </a>
+            <a
+              href="#"
+              onclick="event.preventDefault(); window.location.href='admin.html'">
+              Admin Portal
+            </a>
+            <a
+              href="#"
+              onclick="event.preventDefault(); window.location.href='student.html'">
+              Student Portal
+            </a>
+          </div>
+
+          <div class="footer-section">
+            <h3>Resources</h3>
+            <a
+              href="#"
+              onclick="event.preventDefault(); showSuccessModal('Coming Soon','Documentation and resources will be available in the full LMS platform.','home')">
+              Documentation
+            </a>
+            <a
+              href="#"
+              onclick="event.preventDefault(); showSuccessModal('Coming Soon','API access will be available for premium users.','home')">
+              API
+            </a>
+            <a
+              href="#"
+              onclick="event.preventDefault(); showSuccessModal('Coming Soon','Support center coming soon!','home')">
+              Support Center
+            </a>
+            <a
+              href="#"
+              onclick="event.preventDefault(); showSuccessModal('Coming Soon','Community forum launching soon!','home')">
+              Community
+            </a>
+          </div>
+
+          <div class="footer-section">
+            <h3>Contact</h3>
+            <p>📧 hello@lmspro.com</p>
+            <p>📞 +1 (555) 123-4567</p>
+            <p>📍 San Francisco, CA</p>
+            <div
+              style="
+                margin-top: 20px;
+                display: flex;
+                gap: 16px;
+                font-size: 24px;
+              ">
+              <a
+                href="#"
+                onclick="event.preventDefault();"
+                style="transition: transform 0.3s;"
+                onmouseover="this.style.transform='scale(1.2)'"
+                onmouseout="this.style.transform='scale(1)'">
+                🐦
+              </a>
+              <a
+                href="#"
+                onclick="event.preventDefault();"
+                style="transition: transform 0.3s;"
+                onmouseover="this.style.transform='scale(1.2)'"
+                onmouseout="this.style.transform='scale(1)'">
+                💼
+              </a>
+              <a
+                href="#"
+                onclick="event.preventDefault();"
+                style="transition: transform 0.3s;"
+                onmouseover="this.style.transform='scale(1.2)'"
+                onmouseout="this.style.transform='scale(1)'">
+                📘
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            © 2024 LMS Pro. All rights reserved. Empowering education
+            worldwide.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Main JS -->
+    <script src="script.js"></script>
+  </body>
+</html>

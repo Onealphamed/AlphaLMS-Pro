@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LMS Pro – Features</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+</head>
+<body>
+  <!-- NAVBAR (Features is active) -->
+  <nav>
+    <div class="container">
+      <div class="nav-content">
+        <div class="logo" onclick="window.location.href='index.html'">📚 AlphaLMS Pro</div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+          <li><button onclick="window.location.href='index.html'">Home</button></li>
+          <li><button class="active" onclick="window.location.href='features.html'">Features</button></li>
+          <li><button onclick="window.location.href='admin.html'">Admin Portal</button></li>
+          <li><button onclick="window.location.href='student.html'">Student Portal</button></li>
+          <li>
+            <button class="nav-cta-button" onclick="window.location.href='contact.html'">
+              Request Demo
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- FEATURES HERO -->
+  <section class="hero hero-features" style="padding: 130px 0;">
+    <div class="hero-content">
+      <div class="container">
+        <h1 style="font-size: 48px; margin-bottom: 20px; margin-top: 60px;">
+          Powerful Features For Healthcare Training
+        </h1>
+        <p style="font-size: 20px;">
+          Everything you need to create, manage, and scale your medical education platform
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES GRID -->
+ <section class="features">
+    <div class="container">
+     <div class="feature-grid">
+      <div class="feature-card" onclick="navigateToPage('dashboard')"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&amp;q=80" alt="Analytics Dashboard" class="feature-image">
+       <h3>Analytics Dashboard</h3>
+       <p>Real-time insights into student performance, engagement metrics, and revenue tracking.</p>
+       <div class="card-arrow">
+        →
+       </div>
+      </div>
+      <div class="feature-card" onclick="navigateToPage('admin')"><img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&amp;q=80" alt="Course Management" class="feature-image">
+       <h3>Course Management</h3>
+       <p>Create unlimited courses with modules, lessons, quizzes, and assignments effortlessly.</p>
+       <div class="card-arrow">
+        →
+       </div>
+      </div>
+      <div class="feature-card" onclick="switchAdminViewDirect('students')"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&amp;q=80" alt="Student Management" class="feature-image">
+       <h3>Student Management</h3>
+       <p>Track enrollments, monitor progress, and engage with learners effectively.</p>
+       <div class="card-arrow">
+        →
+       </div>
+      </div>
+      <div class="feature-card" onclick="navigateToPage('student')"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&amp;q=80" alt="Student Portal" class="feature-image">
+       <h3>Student Portal</h3>
+       <p>Beautiful dashboard where students track progress, access courses, and earn certificates.</p>
+       <div class="card-arrow">
+        →
+       </div>
+      </div>
+      
+     
+      <div class="feature-card"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&amp;q=80" alt="Certificates" class="feature-image">
+       <h3>Certificates & Badges</h3>
+       <p>Automatically generate beautiful certificates and award badges to motivate learners.</p>
+       <div class="card-arrow">
+        →
+       </div>
+      </div>
+      <div class="feature-card"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&amp;q=80" alt="Online Discussion Forums" class="feature-image">
+       <h3>Online Discussion Forums</h3>
+       <p>Foster community engagement with built-in forums and Q&amp;A functionality.</p>
+       <div class="card-arrow">
+        →
+       </div>
+      </div>
+      </div>
+    </div>
+   </section>
+
+
+  <!-- FOOTER (same as main site, trimmed if you like) -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Resources</h3>
+          <a href="#" onclick="event.preventDefault(); showSuccessModal('Coming Soon', 'Documentation and resources will be available in the full LMS platform.', 'home')">Documentation</a>
+          <a href="#" onclick="event.preventDefault(); showSuccessModal('Coming Soon', 'API access will be available for premium users.', 'home')">API</a>
+          <a href="#" onclick="event.preventDefault(); showSuccessModal('Coming Soon', 'Support center coming soon!', 'home')">Support Center</a>
+          <a href="#" onclick="event.preventDefault(); showSuccessModal('Coming Soon', 'Community forum launching soon!', 'home')">Community</a>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>📧 hello@lmspro.com</p>
+          <p>📞 +1 (555) 123-4567</p>
+          <p>📍 San Francisco, CA</p>
+          <div style="margin-top: 20px; display: flex; gap: 16px; font-size: 24px;">
+            <a href="#" onclick="event.preventDefault();" style="transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">🐦</a>
+            <a href="#" onclick="event.preventDefault();" style="transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">💼</a>
+            <a href="#" onclick="event.preventDefault();" style="transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">📘</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2024 LMS Pro. All rights reserved. Empowering education worldwide.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LMS Pro – Request Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+</head>
+<body>
+  <!-- NAVBAR (no main tab active, only CTA) -->
+  <nav>
+    <div class="container">
+      <div class="nav-content">
+        <div class="logo" onclick="window.location.href='index.html'">📚 AlphaLMS Pro</div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+          <li><button onclick="window.location.href='index.html'">Home</button></li>
+          <li><button onclick="window.location.href='features.html'">Features</button></li>
+          <li><button onclick="window.location.href='admin.html'">Admin Portal</button></li>
+          <li><button onclick="window.location.href='student.html'">Student Portal</button></li>
+          <li>
+            <button class="nav-cta-button active" onclick="window.location.href='contact.html'">
+              Request Demo
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTACT PAGE -->
+  <main class="contact-page">
+    <div class="container">
+      <div class="contact-container">
+        <div class="contact-header">
+          <h1>Request a Demo</h1>
+          <p>
+            Fill out the form below and our team will get back to you within 24 hours
+            to schedule your personalized demo.
+          </p>
+        </div>
+
+        <form class="contact-form" id="contact-form" onsubmit="handleContactSubmit(event)">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="first-name">First Name *</label>
+              <input type="text" id="first-name" name="first-name" required placeholder="John" />
+            </div>
+            <div class="form-field">
+              <label for="last-name">Last Name *</label>
+              <input type="text" id="last-name" name="last-name" required placeholder="Smith" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required placeholder="john.smith@company.com" />
+            </div>
+            <div class="form-field">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 123-4567" />
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="company">Company/Organization *</label>
+            <input type="text" id="company" name="company" required placeholder="Your Company Name" />
+          </div>
+
+          <div class="form-field">
+            <label for="role">Your Role *</label>
+            <select id="role" name="role" required>
+              <option value="">Select your role</option>
+              <option value="educator">Educator/Teacher</option>
+              <option value="admin">School Administrator</option>
+              <option value="training">Corporate Training Manager</option>
+              <option value="entrepreneur">Entrepreneur/Course Creator</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="students">Expected Number of Students</label>
+            <select id="students" name="students">
+              <option value="">Select range</option>
+              <option value="1-50">1–50 students</option>
+              <option value="51-200">51–200 students</option>
+              <option value="201-500">201–500 students</option>
+              <option value="501-1000">501–1,000 students</option>
+              <option value="1000+">1,000+ students</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="message">Tell us about your needs *</label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              placeholder="Tell us what you're looking for in an LMS..."
+            ></textarea>
+          </div>
+
+          <button type="submit" class="submit-button" id="submit-btn">
+            Request Demo
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Resources</h3>
+          <a href="#"
+             onclick="event.preventDefault(); showSuccessModal('Coming Soon', 'Documentation and resources will be available in the full LMS platform.', 'home')">
+            Documentation
+          </a>
+          <a href="#"
+             onclick="event.preventDefault(); showSuccessModal('Coming Soon', 'API access will be available for premium users.', 'home')">
+            API
+          </a>
+          <a href="#"
+             onclick="event.preventDefault(); showSuccessModal('Coming Soon', 'Support center coming soon!', 'home')">
+            Support Center
+          </a>
+          <a href="#"
+             onclick="event.preventDefault(); showSuccessModal('Coming Soon', 'Community forum launching soon!', 'home')">
+            Community
+          </a>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>📧 hello@lmspro.com</p>
+          <p>📞 +1 (555) 123-4567</p>
+          <p>📍 San Francisco, CA</p>
+          <div style="margin-top: 20px; display: flex; gap: 16px; font-size: 24px;">
+            <a href="#"
+               onclick="event.preventDefault();"
+               style="transition: transform 0.3s;"
+               onmouseover="this.style.transform='scale(1.2)'"
+               onmouseout="this.style.transform='scale(1)'">🐦</a>
+            <a href="#"
+               onclick="event.preventDefault();"
+               style="transition: transform 0.3s;"
+               onmouseover="this.style.transform='scale(1.2)'"
+               onmouseout="this.style.transform='scale(1)'">💼</a>
+            <a href="#"
+               onclick="event.preventDefault();"
+               style="transition: transform 0.3s;"
+               onmouseover="this.style.transform='scale(1.2)'"
+               onmouseout="this.style.transform='scale(1)'">📘</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2024 LMS Pro. All rights reserved. Empowering education worldwide.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
