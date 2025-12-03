@@ -9,60 +9,72 @@
   <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
 </head>
 <body>
-  <!-- NAVBAR (same structure as other pages) -->
-  <nav>
-    <div class="container nav-content">
-      <div class="logo" onclick="navigateTo('home')">
-        OneAlphaMed LMS
-      </div>
 
-      <!-- Desktop links -->
-      <ul class="nav-links" id="navLinks">
-        <li><button onclick="navigateTo('home')">Home</button></li>
-        <li><button class="active" onclick="navigateTo('features')">Features</button></li>
-        <li><button onclick="navigateTo('admin')">Admin Dashboard</button></li>
-        <li><button onclick="navigateTo('student')">HCP Portal</button></li>
-        <li><button onclick="navigateTo('contact')">Contact</button></li>
-        <li>
-          <input
-            type="text"
-            class="nav-search"
-            id="navSearchInput"
-            placeholder="Search: DKA, ACS, insulin titration..."
-          />
-          <div class="nav-search-suggestions" id="navSearchSuggestions">
-            <div class="nav-search-suggestions-header">Try:</div>
-            <ul class="nav-search-suggestion-list">
-              <li class="nav-search-suggestion">
-                <span>Basal insulin titration</span>
-                <small>Protocols · Case modules</small>
-              </li>
-              <li class="nav-search-suggestion">
-                <span>DKA management</span>
-                <small>Algorithms · Micro-videos</small>
-              </li>
-              <li class="nav-search-suggestion">
-                <span>ACS emergency pathway</span>
-                <small>Guidelines · Flash cards</small>
-              </li>
-            </ul>
+    <!-- NAVBAR -->
+    <nav>
+      <div class="container">
+        <div class="nav-content">
+          <!-- Logo -->
+          <div
+            class="logo"
+            onclick="window.location.href='index.html'">
+            📚 AlphaLMS Pro
           </div>
-        </li>
-        <li>
-          <button class="nav-cta-button" onclick="navigateTo('login')">
-            Book a Demo
-          </button>
-        </li>
-      </ul>
 
-      <!-- Mobile burger -->
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </nav>
+          <!-- Mobile hamburger -->
+          <button
+            class="nav-toggle"
+            aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <!-- Nav links -->
+          <ul class="nav-links">
+            <li>
+              <button
+            
+                onclick="window.location.href='index.html'">
+                Home
+              </button>
+            </li>
+            <li>
+              <button class="active" onclick="window.location.href='features.html'">
+                Features
+              </button>
+            </li>
+            <li>
+              <button onclick="window.location.href='admin.html'">
+                Admin Portal
+              </button>
+            </li>
+            <li>
+              <button onclick="window.location.href='student.html'">
+                Student Portal
+              </button>
+            </li>
+
+  <li>
+    <input
+      type="search"
+      class="nav-search"
+      placeholder="Search courses, HCP content…"
+    />
+  </li>
+          
+            <li>
+              <button
+                class="nav-cta-button"
+                onclick="window.location.href='contact.html'">
+                Request Demo
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  
 
   <!-- FEATURES PAGE WRAPPER -->
   <main class="page active" id="page-features">
