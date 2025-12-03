@@ -24,6 +24,13 @@
           <li><button onclick="window.location.href='features.html'">Features</button></li>
           <li><button class="active" onclick="window.location.href='admin.html'">Admin Portal</button></li>
           <li><button onclick="window.location.href='student.html'">Student Portal</button></li>
+  <li>
+    <input
+      type="search"
+      class="nav-search"
+      placeholder="Search courses, HCP content…"
+    />
+  </li>
           <li>
             <button class="nav-cta-button" onclick="window.location.href='contact.html'">
               Request Demo
@@ -79,9 +86,20 @@
 <div class="sidebar-section">
   <h3>Analytics</h3>
   <div class="sidebar-item" onclick="switchAdminView('reports', this)">
-    <span>📊</span> Reports
+    📊 Analytics & Reports
   </div>
 </div>
+
+<div class="sidebar-section">
+  <h3>Operations</h3>
+  <div class="sidebar-item" onclick="switchAdminView('certificates', this)">
+    🎓 Certificates
+  </div>
+  <div class="sidebar-item" onclick="switchAdminView('live-events', this)">
+    🎥 Live Events
+  </div>
+</div>
+
 
       </div>
     </aside>
@@ -166,41 +184,101 @@
               <button class="btn-icon btn-delete" onclick="showDeleteConfirm()">🗑️ Delete</button>
             </div>
           </div>
+
+
+
         </div>
       </div>
     </div>
   </main>
 
-  <!-- FOOTER (same as main site, trimmed if you like) -->
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Resources</h3>
-          <a href="#" onclick="event.preventDefault(); showSuccessModal('Coming Soon', 'Documentation and resources will be available in the full LMS platform.', 'home')">Documentation</a>
-          <a href="#" onclick="event.preventDefault(); showSuccessModal('Coming Soon', 'API access will be available for premium users.', 'home')">API</a>
-          <a href="#" onclick="event.preventDefault(); showSuccessModal('Coming Soon', 'Support center coming soon!', 'home')">Support Center</a>
-          <a href="#" onclick="event.preventDefault(); showSuccessModal('Coming Soon', 'Community forum launching soon!', 'home')">Community</a>
-        </div>
+ <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>About LMS Pro</h3>
+            <p>
+              Empowering educators and healthcare professionals with
+              cutting-edge learning management technology. Build your
+              medical academy with confidence.
+            </p>
+          </div>
 
-        <div class="footer-section">
-          <h3>Contact</h3>
-          <p>📧 hello@lmspro.com</p>
-          <p>📞 +1 (555) 123-4567</p>
-          <p>📍 San Francisco, CA</p>
-          <div style="margin-top: 20px; display: flex; gap: 16px; font-size: 24px;">
-            <a href="#" onclick="event.preventDefault();" style="transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">🐦</a>
-            <a href="#" onclick="event.preventDefault();" style="transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">💼</a>
-            <a href="#" onclick="event.preventDefault();" style="transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">📘</a>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <a
+              href="#"
+              onclick="event.preventDefault(); window.location.href='index.html'">
+              Home
+            </a>
+            <a
+              href="#"
+              onclick="event.preventDefault(); window.location.href='features.html'">
+              Features
+            </a>
+            <a
+              href="#"
+              onclick="event.preventDefault(); window.location.href='admin.html'">
+              Admin Portal
+            </a>
+            <a
+              href="#"
+              onclick="event.preventDefault(); window.location.href='student.html'">
+              Student Portal
+            </a>
+          </div>
+
+          <div class="footer-section">
+            <h3>Resources</h3>
+            <a
+              href="#"
+              onclick="event.preventDefault(); showSuccessModal('Coming Soon','Documentation and resources will be available in the full LMS platform.','home')">
+              Documentation
+            </a>
+            <a
+              href="#"
+              onclick="event.preventDefault(); showSuccessModal('Coming Soon','API access will be available for premium users.','home')">
+              API
+            </a>
+            <a
+              href="#"
+              onclick="event.preventDefault(); showSuccessModal('Coming Soon','Support center coming soon!','home')">
+              Support Center
+            </a>
+            <a
+              href="#"
+              onclick="event.preventDefault(); showSuccessModal('Coming Soon','Community forum launching soon!','home')">
+              Community
+            </a>
+          </div>
+
+          <div class="footer-section">
+            <h3>Contact</h3>
+            <p>📧 info@onealphamed.com</p>
+            <p>📞 +91 8655789983 </p>
+            <p>📍 Faridabad,Haryana</p>
+            <div
+              style="
+                margin-top: 20px;
+                display: flex;
+                gap: 16px;
+                font-size: 24px;
+              ">
+
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="footer-bottom">
-        <p>© 2024 LMS Pro. All rights reserved. Empowering education worldwide.</p>
+        <div class="footer-bottom">
+          <p>
+            © 2024 LMS Pro. All rights reserved. Empowering education
+            worldwide.
+          </p>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+
 
   <!-- Shared JS -->
   <script src="script.js"></script>
