@@ -3723,9 +3723,31 @@ footer {
 .service-card-grid {
   margin-top: 28px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(3, minmax(260px, 1fr));   /* Desktop */
   gap: 24px;
+  max-width: 1200px;      /* keeps layout centered */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;        /* nice clean left-right spacing */
 }
+
+/* Tablet (approx < 992px): 2 columns */
+@media (max-width: 992px) {
+  .service-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+/* Mobile (approx < 600px): 1 column */
+@media (max-width: 600px) {
+  .service-card-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 16px;      /* slightly tighter margin for phones */
+  }
+}
+
 
 .service-card {
   background: #ffffff;
@@ -3760,6 +3782,7 @@ footer {
   color: #475569;
   line-height: 1.55;
 }
+
 
 
 
