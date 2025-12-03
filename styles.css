@@ -1105,12 +1105,7 @@ nav.scrolled {
 
 .how-it-works {
   padding: 72px 0;
-  background: linear-gradient(
-    180deg,
-    #eff6ff 0%,
-    #ffffff 45%,
-    #f9fafb 100%
-  );
+  background: #ffffff;
 }
 
 .steps-grid {
@@ -3697,6 +3692,7 @@ footer {
    FEATURES – SIX SERVICE CARDS
 ================================ */
 .service-cards-section {
+  background: #ffffff;
   padding: 60px 0 20px;
 }
 
