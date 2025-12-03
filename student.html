@@ -22,7 +22,14 @@
           <li><button onclick="window.location.href='features.html'">Features</button></li>
           <li><button onclick="window.location.href='admin.html'">Admin Portal</button></li>
           <li><button class="active" onclick="window.location.href='student.html'">Student Portal</button></li>
-          <li>
+  <li>
+    <input
+      type="search"
+      class="nav-search"
+      placeholder="Search courses, HCP content…"
+    />
+  </li>          
+<li>
             <button class="nav-cta-button" onclick="window.location.href='contact.html'">
               Request Demo
             </button>
@@ -44,257 +51,606 @@
     </div>
   </section>
 
-  <!-- STUDENT PORTAL DASHBOARD (only ONE main) -->
- <!-- STUDENT PORTAL DASHBOARD – For Medical Learners -->
-<main class="student-portal">
-  <div class="container">
 
-    <!-- Progress Overview -->
-    <div class="progress-overview">
-      <div class="progress-card">
-        <div class="progress-icon">📚</div>
-        <div class="progress-value">6</div>
-        <div class="progress-label">Active Courses</div>
-      </div>
-
-      <div class="progress-card">
-        <div class="progress-icon">✅</div>
-        <div class="progress-value">3</div>
-        <div class="progress-label">Completed Modules</div>
-      </div>
-
-      <div class="progress-card">
-        <div class="progress-icon">⏱️</div>
-        <div class="progress-value">32h</div>
-        <div class="progress-label">Learning Hours Logged</div>
-      </div>
-
-      <div class="progress-card">
-        <div class="progress-icon">🏅</div>
-        <div class="progress-value">12</div>
-        <div class="progress-label">CME Credits Earned</div>
-      </div>
-    </div>
-
-    <!-- My Courses (Medical) -->
-    <div class="course-list">
-      <h2 style="margin-bottom: 32px; font-size: 28px; font-weight: 800; color: #1e293b;">
-        My Clinical Courses
-      </h2>
-
-      <!-- Course 1 – Diabetes -->
-      <div class="course-item">
-        <div class="course-header">
-          <div class="course-title">
-            🩺 Practical Diabetes Management in Clinical Practice
-          </div>
-          <span class="status-badge status-active">In Progress</span>
+  <!-- STUDENT PORTAL – SIDEBAR LAYOUT -->
+<main class="admin-layout student-layout student-portal">
+    <!-- LEFT SIDEBAR -->
+<aside class="admin-sidebar-full student-sidebar">
+      <div class="sidebar-section">
+        <h3>My Learning</h3>
+        <div class="sidebar-item active" onclick="switchStudentView('overview', this)">
+          📊 Overview
         </div>
-        <div class="progress-bar-container">
-          <div class="progress-bar" style="width: 64%;"></div>
-        </div>
-        <div class="course-stats">
-          <span><strong>Progress:</strong> 64% Complete</span>
-          <span><strong>Modules:</strong> 7 / 11 Completed</span>
-          <span><strong>Cases:</strong> 9 Case Scenarios Solved</span>
-          <span><strong>CME:</strong> 4 / 6 Credits Earned</span>
-        </div>
-        <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap;">
-          <button
-            onclick="showSuccessModal('Continue Learning', 'In the full LMS, you would resume your diabetes case-based module from where you left off.', 'student')"
-            style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: white; padding: 12px 24px; border: none; border-radius: 12px; font-weight: 600; cursor: pointer; transition: all 0.3s;"
-          >
-            Continue Learning
-          </button>
-          <button
-            style="background: #e2e8f0; color: #64748b; padding: 12px 24px; border: none; border-radius: 12px; font-weight: 600; cursor: pointer;"
-            disabled
-          >
-            🏆 Certificate Locked
-          </button>
+        <div class="sidebar-item" onclick="switchStudentView('courses', this)">
+          📚 My Courses
         </div>
       </div>
 
-      <!-- Course 2 – Hypertension -->
-      <div class="course-item">
-        <div class="course-header">
-          <div class="course-title">
-            🫀 Evidence-Based Hypertension Management
-          </div>
-          <span class="status-badge status-active">Completed ✓</span>
+      <div class="sidebar-section">
+        <h3>Smart Experiences</h3>
+        <div class="sidebar-item" onclick="switchStudentView('journey', this)">
+          🗺️ Journey Map
         </div>
-        <div class="progress-bar-container">
-          <div class="progress-bar" style="width: 100%;"></div>
+        <div class="sidebar-item" onclick="switchStudentView('pathways', this)">
+          🧬 Clinical Pathway
         </div>
-        <div class="course-stats">
-          <span><strong>Progress:</strong> 100% Complete</span>
-          <span><strong>Modules:</strong> 8 / 8 Completed</span>
-          <span><strong>Guidelines:</strong> ACC/AHA & ESC Covered</span>
-          <span><strong>CME:</strong> 4 Credits Earned</span>
+        <div class="sidebar-item" onclick="switchStudentView('leaderboard', this)">
+          🏆 Leaderboard
         </div>
-        <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap;">
-          <button
-            onclick="showSuccessModal('Course Materials', 'In the full LMS, you could revisit algorithms, flowcharts, and guideline summaries anytime.', 'student')"
-            style="background: #e2e8f0; color: #475569; padding: 12px 24px; border: none; border-radius: 12px; font-weight: 600; cursor: pointer;"
-          >
-            Review Course
-          </button>
-          <button
-            onclick="downloadCertificate('Evidence-Based Hypertension Management')"
-            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 12px 24px; border: none; border-radius: 12px; font-weight: 600; cursor: pointer; transition: all 0.3s; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);"
-          >
-            🏅 Download CME Certificate
-          </button>
+        <div class="sidebar-item" onclick="switchStudentView('digital-twin', this)">
+          👤 Digital Twin
         </div>
       </div>
+    </aside>
 
-      <!-- Course 3 – Infectious Diseases / Nurses & Residents -->
-      <div class="course-item">
-        <div class="course-header">
-          <div class="course-title">
-            🧫 Infection Prevention & Antimicrobial Stewardship
-          </div>
-          <span class="status-badge status-active">In Progress</span>
-        </div>
-        <div class="progress-bar-container">
-          <div class="progress-bar" style="width: 48%;"></div>
-        </div>
-        <div class="course-stats">
-          <span><strong>Progress:</strong> 48% Complete</span>
-          <span><strong>Modules:</strong> 5 / 10 Completed</span>
-          <span><strong>Audits:</strong> 3 Stewardship Simulations Done</span>
-          <span><strong>CME:</strong> 3 / 6 Credits Earned</span>
-        </div>
-        <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap;">
-          <button
-            onclick="showSuccessModal('Continue Learning', 'In the full LMS, you would continue with hospital infection control scenarios and AMS audits.', 'student')"
-            style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: white; padding: 12px 24px; border: none; border-radius: 12px; font-weight: 600; cursor: pointer; transition: all 0.3s;"
-          >
-            Continue Learning
-          </button>
-          <button
-            style="background: #e2e8f0; color: #64748b; padding: 12px 24px; border: none; border-radius: 12px; font-weight: 600; cursor: pointer;"
-            disabled
-          >
-            🏆 Certificate Locked
-          </button>
-        </div>
-      </div>
+    <!-- RIGHT CONTENT AREA -->
+    <section class="student-content">
+      <div class="container">
+        <!-- VIEW 1: OVERVIEW -->
+        <div class="student-view active" data-view="overview">
+          <!-- Progress Overview -->
+          <div class="progress-overview">
+            <div class="progress-card">
+              <div class="progress-icon">📚</div>
+              <div class="progress-value">6</div>
+              <div class="progress-label">Active Courses</div>
+            </div>
 
-      <!-- Course 4 – ICU / Nurses -->
-      <div class="course-item">
-        <div class="course-header">
-          <div class="course-title">
-            🩹 Critical Care Basics for Residents & ICU Nurses
-          </div>
-          <span class="status-badge status-active">In Progress</span>
-        </div>
-        <div class="progress-bar-container">
-          <div class="progress-bar" style="width: 36%;"></div>
-        </div>
-        <div class="course-stats">
-          <span><strong>Progress:</strong> 36% Complete</span>
-          <span><strong>Skills:</strong> ABC Assessment, Ventilator Basics, Shock</span>
-          <span><strong>Sim Cases:</strong> 4 / 12 ICU Scenarios Completed</span>
-          <span><strong>CME:</strong> 2 / 5 Credits Earned</span>
-        </div>
-        <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap;">
-          <button
-            onclick="showSuccessModal('Continue Learning', 'In the full LMS, you would access ICU simulations and nursing skill checklists.', 'student')"
-            style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: white; padding: 12px 24px; border: none; border-radius: 12px; font-weight: 600; cursor: pointer; transition: all 0.3s;"
-          >
-            Continue Learning
-          </button>
-          <button
-            style="background: #e2e8f0; color: #64748b; padding: 12px 24px; border: none; border-radius: 12px; font-weight: 600; cursor: pointer;"
-            disabled
-          >
-            🏆 Certificate Locked
-          </button>
-        </div>
-      </div>
+            <div class="progress-card">
+              <div class="progress-icon">✅</div>
+              <div class="progress-value">3</div>
+              <div class="progress-label">Completed Modules</div>
+            </div>
 
-      <!-- Course 5 – ECG -->
-      <div class="course-item">
-        <div class="course-header">
-          <div class="course-title">
-            📈 ECG Interpretation Masterclass
-          </div>
-          <span class="status-badge status-pending">Just Started</span>
-        </div>
-        <div class="progress-bar-container">
-          <div class="progress-bar" style="width: 14%;"></div>
-        </div>
-        <div class="course-stats">
-          <span><strong>Progress:</strong> 14% Complete</span>
-          <span><strong>ECGs:</strong> 6 / 40 Tracings Reviewed</span>
-          <span><strong>Focus:</strong> MI, Arrhythmias, Blocks</span>
-          <span><strong>CME:</strong> 1 / 5 Credits Earned</span>
-        </div>
-        <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap;">
-          <button
-            onclick="showSuccessModal('Continue Learning', 'In the full LMS, you would practice with real-world ECG tracings and spot diagnoses.', 'student')"
-            style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: white; padding: 12px 24px; border: none; border-radius: 12px; font-weight: 600; cursor: pointer; transition: all 0.3s;"
-          >
-            Continue Learning
-          </button>
-          <button
-            style="background: #e2e8f0; color: #64748b; padding: 12px 24px; border: none; border-radius: 12px; font-weight: 600; cursor: pointer;"
-            disabled
-          >
-            🏆 Certificate Locked
-          </button>
-        </div>
-      </div>
+            <div class="progress-card">
+              <div class="progress-icon">⏱️</div>
+              <div class="progress-value">32h</div>
+              <div class="progress-label">Learning Hours Logged</div>
+            </div>
 
-    </div><!-- /.course-list -->
-
-  </div><!-- /.container -->
-</main>
-
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Resources</h3>
-          <a href="#"
-             onclick="event.preventDefault(); showSuccessModal('Coming Soon', 'Documentation and resources will be available in the full LMS platform.', 'home')">
-            Documentation
-          </a>
-          <a href="#"
-             onclick="event.preventDefault(); showSuccessModal('Coming Soon', 'API access will be available for premium users.', 'home')">
-            API
-          </a>
-          <a href="#"
-             onclick="event.preventDefault(); showSuccessModal('Coming Soon', 'Support center coming soon!', 'home')">
-            Support Center
-          </a>
-          <a href="#"
-             onclick="event.preventDefault(); showSuccessModal('Coming Soon', 'Community forum launching soon!', 'home')">
-            Community
-          </a>
-        </div>
-
-        <div class="footer-section">
-          <h3>Contact</h3>
-          <p>📧 hello@lmspro.com</p>
-          <p>📞 +1 (555) 123-4567</p>
-          <p>📍 San Francisco, CA</p>
-          <div style="margin-top: 20px; display: flex; gap: 16px; font-size: 24px;">
-            <a href="#" onclick="event.preventDefault();" style="transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">🐦</a>
-            <a href="#" onclick="event.preventDefault();" style="transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">💼</a>
-            <a href="#" onclick="event.preventDefault();" style="transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">📘</a>
+            <div class="progress-card">
+              <div class="progress-icon">🏅</div>
+              <div class="progress-value">12</div>
+              <div class="progress-label">CME Credits Earned</div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="footer-bottom">
-        <p>© 2024 LMS Pro. All rights reserved. Empowering education worldwide.</p>
+        <!-- VIEW 2: MY COURSES -->
+        <div class="student-view" data-view="courses">
+          <div class="course-list">
+            <h2 style="margin-bottom: 32px; font-size: 28px; font-weight: 800; color: #1e293b;">
+              My Clinical Courses
+            </h2>
+
+            <!-- Course 1 – Diabetes -->
+            <div class="course-item">
+              <div class="course-header">
+                <div class="course-title">
+                  🩺 Practical Diabetes Management in Clinical Practice
+                </div>
+                <span class="status-badge status-active">In Progress</span>
+              </div>
+              <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 64%;"></div>
+              </div>
+              <div class="course-stats">
+                <span><strong>Progress:</strong> 64% Complete</span>
+                <span><strong>Modules:</strong> 7 / 11 Completed</span>
+                <span><strong>Cases:</strong> 9 Case Scenarios Solved</span>
+                <span><strong>CME:</strong> 4 / 6 Credits Earned</span>
+              </div>
+              <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap;">
+                <button
+                  onclick="showSuccessModal('Continue Learning', 'In the full LMS, you would resume your diabetes case-based module from where you left off.', 'student')"
+                  style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: white; padding: 12px 24px; border: none; border-radius: 12px; font-weight: 600; cursor: pointer; transition: all 0.3s;"
+                >
+                  Continue Learning
+                </button>
+                <button
+                  style="background: #e2e8f0; color: #64748b; padding: 12px 24px; border: none; border-radius: 12px; font-weight: 600; cursor: pointer;"
+                  disabled
+                >
+                  🏆 Certificate Locked
+                </button>
+              </div>
+            </div>
+
+            <!-- Course 2 – Hypertension -->
+            <div class="course-item">
+              <div class="course-header">
+                <div class="course-title">
+                  🫀 Evidence-Based Hypertension Management
+                </div>
+                <span class="status-badge status-active">Completed ✓</span>
+              </div>
+              <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 100%;"></div>
+              </div>
+              <div class="course-stats">
+                <span><strong>Progress:</strong> 100% Complete</span>
+                <span><strong>Modules:</strong> 8 / 8 Completed</span>
+                <span><strong>Guidelines:</strong> ACC/AHA & ESC Covered</span>
+                <span><strong>CME:</strong> 4 Credits Earned</span>
+              </div>
+              <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap;">
+                <button
+                  onclick="showSuccessModal('Course Materials', 'In the full LMS, you could revisit algorithms, flowcharts, and guideline summaries anytime.', 'student')"
+                  style="background: #e2e8f0; color: #475569; padding: 12px 24px; border: none; border-radius: 12px; font-weight: 600; cursor: pointer;"
+                >
+                  Review Course
+                </button>
+                <button
+                  onclick="downloadCertificate('Evidence-Based Hypertension Management')"
+                  style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 12px 24px; border: none; border-radius: 12px; font-weight: 600; cursor: pointer; transition: all 0.3s; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);"
+                >
+                  🏅 Download CME Certificate
+                </button>
+              </div>
+            </div>
+
+            <!-- Course 3 – Infectious Diseases -->
+            <div class="course-item">
+              <div class="course-header">
+                <div class="course-title">
+                  🧫 Infection Prevention & Antimicrobial Stewardship
+                </div>
+                <span class="status-badge status-active">In Progress</span>
+              </div>
+              <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 48%;"></div>
+              </div>
+              <div class="course-stats">
+                <span><strong>Progress:</strong> 48% Complete</span>
+                <span><strong>Modules:</strong> 5 / 10 Completed</span>
+                <span><strong>Audits:</strong> 3 Stewardship Simulations Done</span>
+                <span><strong>CME:</strong> 3 / 6 Credits Earned</span>
+              </div>
+              <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap;">
+                <button
+                  onclick="showSuccessModal('Continue Learning', 'In the full LMS, you would continue with hospital infection control scenarios and AMS audits.', 'student')"
+                  style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: white; padding: 12px 24px; border: none; border-radius: 12px; font-weight: 600; cursor: pointer; transition: all 0.3s;"
+                >
+                  Continue Learning
+                </button>
+                <button
+                  style="background: #e2e8f0; color: #64748b; padding: 12px 24px; border: none; border-radius: 12px; font-weight: 600; cursor: pointer;"
+                  disabled
+                >
+                  🏆 Certificate Locked
+                </button>
+              </div>
+            </div>
+
+            <!-- Course 4 – ICU -->
+            <div class="course-item">
+              <div class="course-header">
+                <div class="course-title">
+                  🩹 Critical Care Basics for Residents & ICU Nurses
+                </div>
+                <span class="status-badge status-active">In Progress</span>
+              </div>
+              <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 36%;"></div>
+              </div>
+              <div class="course-stats">
+                <span><strong>Progress:</strong> 36% Complete</span>
+                <span><strong>Skills:</strong> ABC Assessment, Ventilator Basics, Shock</span>
+                <span><strong>Sim Cases:</strong> 4 / 12 ICU Scenarios Completed</span>
+                <span><strong>CME:</strong> 2 / 5 Credits Earned</span>
+              </div>
+              <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap;">
+                <button
+                  onclick="showSuccessModal('Continue Learning', 'In the full LMS, you would access ICU simulations and nursing skill checklists.', 'student')"
+                  style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: white; padding: 12px 24px; border: none; border-radius: 12px; font-weight: 600; cursor: pointer; transition: all 0.3s;"
+                >
+                  Continue Learning
+                </button>
+                <button
+                  style="background: #e2e8f0; color: #64748b; padding: 12px 24px; border: none; border-radius: 12px; font-weight: 600; cursor: pointer;"
+                  disabled
+                >
+                  🏆 Certificate Locked
+                </button>
+              </div>
+            </div>
+
+            <!-- Course 5 – ECG -->
+            <div class="course-item">
+              <div class="course-header">
+                <div class="course-title">
+                  📈 ECG Interpretation Masterclass
+                </div>
+                <span class="status-badge status-pending">Just Started</span>
+              </div>
+              <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 14%;"></div>
+              </div>
+              <div class="course-stats">
+                <span><strong>Progress:</strong> 14% Complete</span>
+                <span><strong>ECGs:</strong> 6 / 40 Tracings Reviewed</span>
+                <span><strong>Focus:</strong> MI, Arrhythmias, Blocks</span>
+                <span><strong>CME:</strong> 1 / 5 Credits Earned</span>
+              </div>
+              <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap;">
+                <button
+                  onclick="showSuccessModal('Continue Learning', 'In the full LMS, you would practice with real-world ECG tracings and spot diagnoses.', 'student')"
+                  style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: white; padding: 12px 24px; border: none; border-radius: 12px; font-weight: 600; cursor: pointer; transition: all 0.3s;"
+                >
+                  Continue Learning
+                </button>
+                <button
+                  style="background: #e2e8f0; color: #64748b; padding: 12px 24px; border: none; border-radius: 12px; font-weight: 600; cursor: pointer;"
+                  disabled
+                >
+                  🏆 Certificate Locked
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- VIEW 3: JOURNEY MAP -->
+        <div class="student-view" data-view="journey">
+          <section class="journey-map-section">
+            <div class="journey-map-card">
+              <div class="journey-map-header">
+                <h2>Your Clinical Learning Journey</h2>
+                <span class="journey-pill">Real-time HCP journey map (demo)</span>
+              </div>
+              <p style="font-size:13px; color:#475569; margin-bottom:10px;">
+                In the live LMS, this timeline would adapt based on recency, speciality and assessment performance.
+              </p>
+
+              <div class="journey-steps" id="journey-steps">
+                <div class="journey-step active" data-step="1" onclick="setJourneyStep(1)">
+                  <div class="journey-step-line">
+                    <div class="journey-step-line-fill"></div>
+                  </div>
+                  <div class="journey-step-dot"></div>
+                  <div class="journey-step-label">Onboarding</div>
+                </div>
+                <div class="journey-step" data-step="2" onclick="setJourneyStep(2)">
+                  <div class="journey-step-line">
+                    <div class="journey-step-line-fill"></div>
+                  </div>
+                  <div class="journey-step-dot"></div>
+                  <div class="journey-step-label">Core modules</div>
+                </div>
+                <div class="journey-step" data-step="3" onclick="setJourneyStep(3)">
+                  <div class="journey-step-line">
+                    <div class="journey-step-line-fill"></div>
+                  </div>
+                  <div class="journey-step-dot"></div>
+                  <div class="journey-step-label">Case pathways</div>
+                </div>
+                <div class="journey-step" data-step="4" onclick="setJourneyStep(4)">
+                  <div class="journey-step-line">
+                    <div class="journey-step-line-fill"></div>
+                  </div>
+                  <div class="journey-step-dot"></div>
+                  <div class="journey-step-label">Assessments</div>
+                </div>
+                <div class="journey-step" data-step="5" onclick="setJourneyStep(5)">
+                  <div class="journey-step-line">
+                    <div class="journey-step-line-fill"></div>
+                  </div>
+                  <div class="journey-step-dot"></div>
+                  <div class="journey-step-label">CME & nudges</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="journey-next-best-card" id="journey-next-card">
+              <h3>Next best action</h3>
+              <div class="journey-next-meta">
+                Powered by engagement + assessment data (concept demo).
+              </div>
+              <div class="journey-next-pill-row">
+                <span class="journey-next-pill">Diabetology</span>
+                <span class="journey-next-pill secondary">Needs insulin titration depth</span>
+              </div>
+              <p class="journey-next-body" id="journey-next-body">
+                Recommend completing <strong>“Intensifying therapy in T2DM”</strong> and attempting the
+                associated case pathway before moving to advanced cardiovascular risk modules.
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <!-- VIEW 4: CLINICAL PATHWAY -->
+        <div class="student-view" data-view="pathways">
+          <section class="clinical-pathways">
+            <div class="clinical-pathways-card">
+              <h2>Interactive Clinical Pathway</h2>
+              <p class="clinical-subtitle">
+                This is a demo of how a branching case could feel inside your LMS.
+              </p>
+              <div class="clinical-tags">
+                <span class="clinical-tag">T2DM • Newly diagnosed</span>
+                <span class="clinical-tag">OPD decision-making</span>
+                <span class="clinical-tag">Guideline-aligned</span>
+              </div>
+
+              <div class="path-options">
+                <button
+                  class="path-option active"
+                  data-title="Start with lifestyle + metformin"
+                  data-meta="Path A • Guideline-aligned first-line"
+                  data-body="HbA1c falls by 1.2% over 3 months. No episodes of hypoglycaemia reported. You schedule a review to reassess weight trajectory and cardio–renal risk, with a plan to add a GLP-1 RA if needed."
+                  data-tags="Good glycaemic control;Low hypoglycaemia risk;Cost sensitive"
+                  onclick="handlePathChoice(this)"
+                >
+                  <span>Path A</span>
+                  Start with lifestyle optimisation and metformin monotherapy, review at 3 months.
+                </button>
+
+                <button
+                  class="path-option"
+                  data-title="Early dual therapy with GLP-1 RA"
+                  data-meta="Path B • Aggressive risk reduction"
+                  data-body="You achieve rapid HbA1c reduction with parallel weight loss and BP benefit. Cost and injection burden need counselling, but long-term CV benefit is optimised for this high-risk patient."
+                  data-tags="Weight loss focus;CV risk reduction;High-intensity"
+                  onclick="handlePathChoice(this)"
+                >
+                  <span>Path B</span>
+                  Start metformin + GLP-1 RA upfront because of obesity and raised CV risk.
+                </button>
+
+                <button
+                  class="path-option"
+                  data-title="Escalate to basal insulin early"
+                  data-meta="Path C • High hypoglycaemia risk"
+                  data-body="HbA1c improves but the patient reports nocturnal hypoglycaemia and weight gain. In the real LMS, this path would highlight counselling points and deprescribing options."
+                  data-tags="Rapid control;Hypoglycaemia risk;Monitoring load"
+                  onclick="handlePathChoice(this)"
+                >
+                  <span>Path C</span>
+                  Add basal insulin early to pull HbA1c down as quickly as possible.
+                </button>
+              </div>
+            </div>
+
+            <div class="path-outcome-card" id="path-outcome-card">
+              <div class="path-outcome-title" id="path-outcome-title">
+                Start with lifestyle + metformin
+              </div>
+              <div class="path-outcome-meta" id="path-outcome-meta">
+                Path A • Guideline-aligned first-line
+              </div>
+              <div class="path-outcome-body" id="path-outcome-body">
+                HbA1c falls by 1.2% over 3 months. No episodes of hypoglycaemia reported. You schedule a
+                review to reassess weight trajectory and cardio–renal risk, with a plan to add a GLP-1 RA
+                if needed.
+              </div>
+              <div class="path-outcome-badges" id="path-outcome-badges">
+                <span class="path-outcome-badge">Good glycaemic control</span>
+                <span class="path-outcome-badge">Low hypoglycaemia risk</span>
+                <span class="path-outcome-badge">Cost sensitive</span>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- VIEW 5: LEADERBOARD -->
+        <div class="student-view" data-view="leaderboard">
+          <section class="leaderboard-section">
+            <div class="leaderboard-header">
+              <div>
+                <h2>Specialty leaderboard (demo)</h2>
+                <p>
+                  Show your brand team how HCPs can compete on XP, CME and quiz streaks inside the LMS.
+                </p>
+              </div>
+            </div>
+
+            <div class="leaderboard-grid">
+              <div class="leaderboard-card">
+                <div class="leaderboard-title">Diabetology cohort</div>
+                <div class="leaderboard-meta">XP points last 30 days</div>
+                <ol class="leaderboard-list">
+                  <li>
+                    <div class="leaderboard-rank top">1</div>
+                    <div>Dr. Aisha Verma</div>
+                    <div class="leaderboard-score">1,420 XP</div>
+                  </li>
+                  <li>
+                    <div class="leaderboard-rank">2</div>
+                    <div>Dr. Rajesh Kulkarni</div>
+                    <div class="leaderboard-score">1,280 XP</div>
+                  </li>
+                  <li>
+                    <div class="leaderboard-rank">3</div>
+                    <div>Dr. Nupur Shah</div>
+                    <div class="leaderboard-score">1,110 XP</div>
+                  </li>
+                </ol>
+              </div>
+
+              <div class="leaderboard-card">
+                <div class="leaderboard-title">Hypertension focus</div>
+                <div class="leaderboard-meta">Quiz streaks (days)</div>
+                <ol class="leaderboard-list">
+                  <li>
+                    <div class="leaderboard-rank top">1</div>
+                    <div>Dr. Manoj Das</div>
+                    <div class="leaderboard-score">21-day streak</div>
+                  </li>
+                  <li>
+                    <div class="leaderboard-rank">2</div>
+                    <div>Dr. Shruti Rao</div>
+                    <div class="leaderboard-score">17-day streak</div>
+                  </li>
+                  <li>
+                    <div class="leaderboard-rank">3</div>
+                    <div>Dr. Vivek Kulkarni</div>
+                    <div class="leaderboard-score">15-day streak</div>
+                  </li>
+                </ol>
+              </div>
+
+              <div class="leaderboard-card">
+                <div class="leaderboard-title">Critical care</div>
+                <div class="leaderboard-meta">Protocol completion badges</div>
+                <ol class="leaderboard-list">
+                  <li>
+                    <div class="leaderboard-rank top">1</div>
+                    <div>Nurse Tara Menon</div>
+                    <div class="leaderboard-score">8 badges</div>
+                  </li>
+                  <li>
+                    <div class="leaderboard-rank">2</div>
+                    <div>Dr. Imran Khan</div>
+                    <div class="leaderboard-score">7 badges</div>
+                  </li>
+                  <li>
+                    <div class="leaderboard-rank">3</div>
+                    <div>Nurse Riya Sen</div>
+                    <div class="leaderboard-score">6 badges</div>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- VIEW 6: DIGITAL TWIN -->
+        <div class="student-view" data-view="digital-twin">
+          <section class="hcp-digital-twin">
+            <div class="digital-twin-card">
+              <div class="digital-twin-title">“Digital twin” of this HCP</div>
+              <div class="digital-twin-sub">
+                Concept view – in production, this would be populated from real usage + performance data.
+              </div>
+
+              <div class="digital-twin-grid">
+                <div class="digital-pill">
+                  <strong>Specialty mix</strong>
+                  <span>60% diabetology • 25% cardiology • 15% critical care</span>
+                </div>
+                <div class="digital-pill">
+                  <strong>Engagement style</strong>
+                  <span>Prefers bite-sized videos during weekdays, long cases on Sundays.</span>
+                </div>
+                <div class="digital-pill">
+                  <strong>Risk profile</strong>
+                  <span>Strong on guidelines, needs support in insulin titration and CV risk algorithms.</span>
+                </div>
+                <div class="digital-pill">
+                  <strong>Preferred format</strong>
+                  <span>Case-based flows + polls, avoids long static PDFs.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="digital-twin-side-card">
+              <h3 style="font-weight:700; margin-bottom:6px;">How this helps your brand</h3>
+              <p style="margin-bottom:8px;">
+                Brand teams can see how a “look-alike” group of HCPs moves through your content and where
+                to invest in deeper pathways, webinars or field support.
+              </p>
+              <ul style="margin:0; padding-left:18px; line-height:1.5;">
+                <li>Identify true clinical gaps by cohort.</li>
+                <li>Design campaigns for specific journey stages.</li>
+                <li>Track uplift after adding new content.</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div><!-- /.container -->
+    </section>
+  </main>
+
+
+
+
+ <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>About LMS Pro</h3>
+            <p>
+              Empowering educators and healthcare professionals with
+              cutting-edge learning management technology. Build your
+              medical academy with confidence.
+            </p>
+          </div>
+
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <a
+              href="#"
+              onclick="event.preventDefault(); window.location.href='index.html'">
+              Home
+            </a>
+            <a
+              href="#"
+              onclick="event.preventDefault(); window.location.href='features.html'">
+              Features
+            </a>
+            <a
+              href="#"
+              onclick="event.preventDefault(); window.location.href='admin.html'">
+              Admin Portal
+            </a>
+            <a
+              href="#"
+              onclick="event.preventDefault(); window.location.href='student.html'">
+              Student Portal
+            </a>
+          </div>
+
+          <div class="footer-section">
+            <h3>Resources</h3>
+            <a
+              href="#"
+              onclick="event.preventDefault(); showSuccessModal('Coming Soon','Documentation and resources will be available in the full LMS platform.','home')">
+              Documentation
+            </a>
+            <a
+              href="#"
+              onclick="event.preventDefault(); showSuccessModal('Coming Soon','API access will be available for premium users.','home')">
+              API
+            </a>
+            <a
+              href="#"
+              onclick="event.preventDefault(); showSuccessModal('Coming Soon','Support center coming soon!','home')">
+              Support Center
+            </a>
+            <a
+              href="#"
+              onclick="event.preventDefault(); showSuccessModal('Coming Soon','Community forum launching soon!','home')">
+              Community
+            </a>
+          </div>
+
+          <div class="footer-section">
+            <h3>Contact</h3>
+            <p>📧 info@onealphamed.com</p>
+            <p>📞 +91 8655789983 </p>
+            <p>📍 Faridabad,Haryana</p>
+            <div
+              style="
+                margin-top: 20px;
+                display: flex;
+                gap: 16px;
+                font-size: 24px;
+              ">
+
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            © 2024 LMS Pro. All rights reserved. Empowering education
+            worldwide.
+          </p>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+
 
   <script src="script.js"></script>
 </body>
