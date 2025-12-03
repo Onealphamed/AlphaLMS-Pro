@@ -768,8 +768,10 @@ nav.scrolled {
   border-radius: 20px;
   box-shadow: 0 12px 40px rgba(99, 102, 241, 0.3);
   justify-content: center;
-  width: 83vw;
   position: relative;
+     width: 100%;         /* take full width of container */
+  max-width: 83vw;     /* but don’t become too wide on big screens */
+  margin: 0 auto; 
 }
 
 .stat-item {
@@ -3736,5 +3738,6 @@ footer {
   color: #475569;
   line-height: 1.55;
 }
+
 
 
