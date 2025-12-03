@@ -9,126 +9,364 @@
   <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
 </head>
 <body>
-  <!-- NAVBAR (Features is active) -->
+  <!-- NAVBAR (same structure as other pages) -->
   <nav>
-    <div class="container">
-      <div class="nav-content">
-        <div class="logo" onclick="window.location.href='index.html'">📚 AlphaLMS Pro</div>
-        <button class="nav-toggle" aria-label="Toggle navigation">
-          <span></span><span></span><span></span>
-        </button>
-        <ul class="nav-links">
-          <li><button onclick="window.location.href='index.html'">Home</button></li>
-          <li><button class="active" onclick="window.location.href='features.html'">Features</button></li>
-          <li><button onclick="window.location.href='admin.html'">Admin Portal</button></li>
-          <li><button onclick="window.location.href='student.html'">Student Portal</button></li>
-          <li>
-            <button class="nav-cta-button" onclick="window.location.href='contact.html'">
-              Request Demo
-            </button>
-          </li>
-        </ul>
+    <div class="container nav-content">
+      <div class="logo" onclick="navigateTo('home')">
+        OneAlphaMed LMS
       </div>
+
+      <!-- Desktop links -->
+      <ul class="nav-links" id="navLinks">
+        <li><button onclick="navigateTo('home')">Home</button></li>
+        <li><button class="active" onclick="navigateTo('features')">Features</button></li>
+        <li><button onclick="navigateTo('admin')">Admin Dashboard</button></li>
+        <li><button onclick="navigateTo('student')">HCP Portal</button></li>
+        <li><button onclick="navigateTo('contact')">Contact</button></li>
+        <li>
+          <input
+            type="text"
+            class="nav-search"
+            id="navSearchInput"
+            placeholder="Search: DKA, ACS, insulin titration..."
+          />
+          <div class="nav-search-suggestions" id="navSearchSuggestions">
+            <div class="nav-search-suggestions-header">Try:</div>
+            <ul class="nav-search-suggestion-list">
+              <li class="nav-search-suggestion">
+                <span>Basal insulin titration</span>
+                <small>Protocols · Case modules</small>
+              </li>
+              <li class="nav-search-suggestion">
+                <span>DKA management</span>
+                <small>Algorithms · Micro-videos</small>
+              </li>
+              <li class="nav-search-suggestion">
+                <span>ACS emergency pathway</span>
+                <small>Guidelines · Flash cards</small>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <button class="nav-cta-button" onclick="navigateTo('login')">
+            Book a Demo
+          </button>
+        </li>
+      </ul>
+
+      <!-- Mobile burger -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
 
-  <!-- FEATURES HERO -->
-  <section class="hero hero-features" style="padding: 130px 0;">
-    <div class="hero-content">
-      <div class="container">
-        <h1 style="font-size: 48px; margin-bottom: 20px; margin-top: 60px;">
-          Powerful Features For Healthcare Training
-        </h1>
-        <p style="font-size: 20px;">
-          Everything you need to create, manage, and scale your medical education platform
+  <!-- FEATURES PAGE WRAPPER -->
+  <main class="page active" id="page-features">
+    <!-- HERO -->
+    <section class="hero hero-features">
+      <div class="container hero-content">
+        <h1>Clinical-grade Features Built For Pharma & HCPs</h1>
+        <p>
+          From branching clinical pathways and AI-powered analytics to
+          gamified leaderboards and medical-aware search, your LMS becomes a
+          true <strong>clinical learning operating system</strong>.
+        </p>
+        <button class="cta-button" onclick="navigateTo('contact')">
+          Talk to us about a launch
+        </button>
+      </div>
+    </section>
+
+<!-- SIX CORE SERVICE CARDS -->
+<section class="service-cards-section">
+  <div class="container">
+    <h2 class="section-title">Built for Modern Medical Learning</h2>
+    <p class="section-subtitle">
+      Six powerful pillars that make this LMS stand apart in pharma education.
+    </p>
+
+    <div class="service-card-grid">
+      <!-- Card 1 -->
+      <div class="service-card">
+        <div class="service-icon">🧬</div>
+        <h3>Adaptive Learning</h3>
+        <p>
+          Tailors content flow based on specialty, quiz patterns, engagement
+          signals and learner history.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="service-card">
+        <div class="service-icon">🌳</div>
+        <h3>Branching Clinical Cases</h3>
+        <p>
+          Dynamic case paths that change based on decisions — mirroring real
+          clinical reasoning.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="service-card">
+        <div class="service-icon">🔍</div>
+        <h3>AI Medical Search</h3>
+        <p>
+          Search for “DKA protocol” or “ACS pathway” and instantly get relevant
+          courses, videos and guidelines.
+        </p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <h3>Behavior Analytics</h3>
+        <p>
+          Heatmaps, drop-off analysis, repeat views, specialty cohort performance,
+          and engagement prediction.
+        </p>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="service-card">
+        <div class="service-icon">🏆</div>
+        <h3>Gamification Engine</h3>
+        <p>
+          XP points, streaks, badges, specialty leaderboards and CME rewards to
+          drive repeat usage.
+        </p>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="service-card">
+        <div class="service-icon">📁</div>
+        <h3>Multi-format Lessons</h3>
+        <p>
+          Upload webinars, PDFs, cases, polls, quizzes and microlearning — works
+          with all content formats.
         </p>
       </div>
     </div>
-  </section>
-
-  <!-- FEATURES GRID -->
- <section class="features">
-    <div class="container">
-     <div class="feature-grid">
-      <div class="feature-card" onclick="navigateToPage('dashboard')"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&amp;q=80" alt="Analytics Dashboard" class="feature-image">
-       <h3>Analytics Dashboard</h3>
-       <p>Real-time insights into student performance, engagement metrics, and revenue tracking.</p>
-       <div class="card-arrow">
-        →
-       </div>
-      </div>
-      <div class="feature-card" onclick="navigateToPage('admin')"><img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&amp;q=80" alt="Course Management" class="feature-image">
-       <h3>Course Management</h3>
-       <p>Create unlimited courses with modules, lessons, quizzes, and assignments effortlessly.</p>
-       <div class="card-arrow">
-        →
-       </div>
-      </div>
-      <div class="feature-card" onclick="switchAdminViewDirect('students')"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&amp;q=80" alt="Student Management" class="feature-image">
-       <h3>Student Management</h3>
-       <p>Track enrollments, monitor progress, and engage with learners effectively.</p>
-       <div class="card-arrow">
-        →
-       </div>
-      </div>
-      <div class="feature-card" onclick="navigateToPage('student')"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&amp;q=80" alt="Student Portal" class="feature-image">
-       <h3>Student Portal</h3>
-       <p>Beautiful dashboard where students track progress, access courses, and earn certificates.</p>
-       <div class="card-arrow">
-        →
-       </div>
-      </div>
-      
-     
-      <div class="feature-card"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&amp;q=80" alt="Certificates" class="feature-image">
-       <h3>Certificates & Badges</h3>
-       <p>Automatically generate beautiful certificates and award badges to motivate learners.</p>
-       <div class="card-arrow">
-        →
-       </div>
-      </div>
-      <div class="feature-card"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&amp;q=80" alt="Online Discussion Forums" class="feature-image">
-       <h3>Online Discussion Forums</h3>
-       <p>Foster community engagement with built-in forums and Q&amp;A functionality.</p>
-       <div class="card-arrow">
-        →
-       </div>
-      </div>
-      </div>
-    </div>
-   </section>
+  </div>
+</section>
 
 
-  <!-- FOOTER (same as main site, trimmed if you like) -->
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Resources</h3>
-          <a href="#" onclick="event.preventDefault(); showSuccessModal('Coming Soon', 'Documentation and resources will be available in the full LMS platform.', 'home')">Documentation</a>
-          <a href="#" onclick="event.preventDefault(); showSuccessModal('Coming Soon', 'API access will be available for premium users.', 'home')">API</a>
-          <a href="#" onclick="event.preventDefault(); showSuccessModal('Coming Soon', 'Support center coming soon!', 'home')">Support Center</a>
-          <a href="#" onclick="event.preventDefault(); showSuccessModal('Coming Soon', 'Community forum launching soon!', 'home')">Community</a>
+
+    <!-- CORE FEATURE GRID -->
+    <section class="features">
+      <div class="container">
+        <h2 class="section-title">What Makes This LMS Different</h2>
+        <p class="section-subtitle">
+          These are not generic e-learning features. Every capability is
+          designed around how doctors actually learn: case-based reasoning,
+          quick refreshers, repetition, and high-stakes clinical decision-making.
+        </p>
+
+        <div class="feature-grid">
+          <!-- 1: Branching Clinical Pathways -->
+          <article class="feature-card reveal">
+            <span class="feature-icon">🌳</span>
+            <h3>Branching Clinical Pathways</h3>
+            <p>
+              Turn each course into a living case. As the HCP chooses
+              Option&nbsp;A vs Option&nbsp;B, they unlock different modules,
+              mimicking real-world clinical decision trees.
+            </p>
+            <div class="card-arrow">→</div>
+          </article>
+
+          <!-- 2: HCP Journey Map -->
+          <article class="feature-card reveal">
+            <span class="feature-icon">🩺</span>
+            <h3>Personalised HCP Journey Map</h3>
+            <p>
+              Track every doctor’s journey: what they’ve completed, what’s
+              pending, and what the AI recommends next based on specialty,
+              interests, and performance.
+            </p>
+            <div class="card-arrow">→</div>
+          </article>
+
+          <!-- 3: Gamified Leaderboards -->
+          <article class="feature-card reveal">
+            <span class="feature-icon">🏆</span>
+            <h3>Gamified Leaderboards for Doctors</h3>
+            <p>
+              Leaderboards by specialty, XP points, daily streaks, and
+              badges like “Diabetes Champion” and “ICU Star” to keep
+              doctors coming back.
+            </p>
+            <div class="card-arrow">→</div>
+          </article>
+
+          <!-- 4: Behaviour Analytics -->
+          <article class="feature-card reveal">
+            <span class="feature-icon">📊</span>
+            <h3>HCP Behaviour Analytics Dashboard</h3>
+            <p>
+              Visual heatmaps of drop-offs, time-on-lesson, repeat views,
+              and specialty-wise performance — built for medical affairs,
+              not generic L&amp;D.
+            </p>
+            <div class="card-arrow">→</div>
+          </article>
+
+          <!-- 5: AI Search -->
+          <article class="feature-card reveal">
+            <span class="feature-icon">🔍</span>
+            <h3>AI-Powered Medical Search</h3>
+            <p>
+              HCPs can type “DKA protocol” or “ACS algorithm” and instantly
+              surface relevant courses, micro-videos, PDFs, case studies and
+              Q&amp;A threads.
+            </p>
+            <div class="card-arrow">→</div>
+          </article>
+
+          <!-- 6: HCP Digital Twin -->
+          <article class="feature-card reveal">
+            <span class="feature-icon">🧬</span>
+            <h3>HCP Digital Twin</h3>
+            <p>
+              An adaptive learner profile that tracks interests, specialties,
+              quiz patterns and blind-spots, then auto-recommends the right
+              content at the right time.
+            </p>
+            <div class="card-arrow">→</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI FEATURE STRIP (uses .ai-features-section styles you already have) -->
+    <section class="ai-features-section">
+      <div class="container">
+        <h2 class="section-title" style="color: #fff; margin-bottom: 30px;">
+          AI Working Quietly in the Background
+        </h2>
+        <div class="section-subtitle" style="color: rgba(226,232,240,0.9); margin-top: 0;">
+          You don’t have to “set up” AI. It plugs into your existing courses and
+          starts learning from how HCPs interact with content.
         </div>
 
-        <div class="footer-section">
-          <h3>Contact</h3>
-          <p>📧 hello@lmspro.com</p>
-          <p>📞 +1 (555) 123-4567</p>
-          <p>📍 San Francisco, CA</p>
-          <div style="margin-top: 20px; display: flex; gap: 16px; font-size: 24px;">
-            <a href="#" onclick="event.preventDefault();" style="transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">🐦</a>
-            <a href="#" onclick="event.preventDefault();" style="transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">💼</a>
-            <a href="#" onclick="event.preventDefault();" style="transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">📘</a>
+        <div class="ai-features-grid">
+          <div class="ai-feature-card reveal">
+            <span class="ai-badge">Behaviour Insights</span>
+            <h3>Drop-off &amp; Replay Heatmaps</h3>
+            <p>
+              Spot exactly where doctors disengage or keep rewinding.
+              Optimise slides, timings and explanations with evidence,
+              not guesswork.
+            </p>
+          </div>
+
+          <div class="ai-feature-card reveal">
+            <span class="ai-badge">Prediction</span>
+            <h3>Learning Pattern Prediction</h3>
+            <p>
+              The system learns which formats (cases, videos, polls) each
+              cohort responds to and nudges them with the right next step.
+            </p>
+          </div>
+
+          <div class="ai-feature-card reveal">
+            <span class="ai-badge">Personalisation</span>
+            <h3>Specialty-aware Recommendations</h3>
+            <p>
+              A cardiologist and a diabetologist never see the same home
+              screen — content and calls-to-action are tuned to their
+              daily practice.
+            </p>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="footer-bottom">
-        <p>© 2024 LMS Pro. All rights reserved. Empowering education worldwide.</p>
+    <!-- HOW IT WORKS (reuses .how-it-works + .steps-grid) -->
+    <section class="how-it-works">
+      <div class="container">
+        <h2 class="section-title">How It Fits Into Your Brand Plan</h2>
+        <div class="section-subtitle">
+          We designed the LMS so medical, marketing, and digital teams can plug
+          it into ongoing therapy campaigns without heavy tech lift.
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-badge">Step 01</div>
+            <h3>Upload Existing Assets</h3>
+            <p>
+              Add your slide decks, webinars, PDFs, case studies and brand
+              content — no need to rebuild everything from scratch.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-badge">Step 02</div>
+            <h3>Convert to Clinical Paths</h3>
+            <p>
+              Turn assets into branching clinical journeys, micro-modules,
+              polls and assessments tailored to each HCP segment.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-badge">Step 03</div>
+            <h3>Launch With Gamification</h3>
+            <p>
+              Roll out specialty-wise leaderboards, badges and streaks to
+              drive repeat logins and course completion.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-badge">Step 04</div>
+            <h3>Showcase Impact to Clients</h3>
+            <p>
+              Use behaviour analytics, digital-twin insights and specialty-wise
+              metrics as a story in your brand reviews and MLR decks.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (reuse your global footer styles) -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-section">
+        <h3>OneAlphaMed LMS</h3>
+        <p>
+          Clinical-grade, pharma-ready learning experiences for doctors,
+          built by a medical + digital team.
+        </p>
+      </div>
+      <div class="footer-section">
+        <h3>Product</h3>
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="admin.html">Admin Dashboard</a>
+        <a href="student.html">HCP Portal</a>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>Email: hello@onealphamed.com</p>
+        <p>For demos &amp; pilots, use the contact form.</p>
       </div>
     </div>
+    <div class="footer-bottom">
+      © <span id="yearSpan"></span> OneAlphaMed. All rights reserved.
+    </div>
   </footer>
-  <script src="script.js"></script>
+
+  <script src="Script.js"></script>
+  <script>
+    // simple year update
+    document.getElementById('yearSpan').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
