@@ -572,6 +572,7 @@ nav.scrolled {
 }
 
 /* video journey */
+/* video journey */
 .user-journey {
   padding: 72px 0;
   background: #f8fafc;
@@ -585,23 +586,25 @@ nav.scrolled {
 .user-journey-video-wrapper {
   display: flex;
   justify-content: center;
-  width: 1087.7px;
-  height: 501.3px;
+  width: 100%;
+  max-width: 1080px;
   margin: 0 auto;
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(15, 23, 42, 0.18);
   background: #020617;
   position: relative;
+aspect-ratio: 1088 / 501;
 }
 
 .user-journey-video-wrapper video {
   display: block;
-  width: 1087.7px;
-  height: 501.3px;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;           /* ✅ keep original aspect ratio */
+  /* object-fit not needed if we let the video size itself */
   pointer-events: none;
 }
+
 
 .custom-play-btn {
   position: absolute;
@@ -3738,6 +3741,7 @@ footer {
   color: #475569;
   line-height: 1.55;
 }
+
 
 
 
