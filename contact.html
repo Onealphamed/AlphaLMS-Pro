@@ -10,33 +10,69 @@
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- NAVBAR (no main tab active, only CTA) -->
-  <nav>
-    <div class="container">
-      <div class="nav-content">
-        <div class="logo" onclick="window.location.href='index.html'">📚 AlphaLMS Pro</div>
-        <button class="nav-toggle" aria-label="Toggle navigation">
-          <span></span><span></span><span></span>
-        </button>
-        <ul class="nav-links">
-          <li><button onclick="window.location.href='index.html'">Home</button></li>
-          <li><button onclick="window.location.href='features.html'">Features</button></li>
-          <li><button onclick="window.location.href='admin.html'">Admin Portal</button></li>
-          <li><button onclick="window.location.href='student.html'">Student Portal</button></li>
-<li class="nav-search-wrapper">
-  <input type="search" class="nav-search">
-</li>
+  <!-- NAVBAR -->
+    <nav>
+      <div class="container">
+        <div class="nav-content">
+          <!-- Logo -->
+          <div
+            class="logo"
+            onclick="window.location.href='index.html'">
+            📚 AlphaLMS Pro
+          </div>
 
-          <li>
-            <button class="nav-cta-button active" onclick="window.location.href='contact.html'">
-              Request Demo
-            </button>
-          </li>
-        </ul>
+          <!-- Mobile hamburger -->
+          <button
+            class="nav-toggle"
+            aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <!-- Nav links -->
+          <ul class="nav-links">
+            <li>
+              <button
+                onclick="window.location.href='index.html'">
+                Home
+              </button>
+            </li>
+            <li>
+              <button onclick="window.location.href='features.html'">
+                Features
+              </button>
+            </li>
+            <li>
+              <button onclick="window.location.href='admin.html'">
+                Admin Portal
+              </button>
+            </li>
+            <li>
+              <button onclick="window.location.href='student.html'">
+                Student Portal
+              </button>
+            </li>
+
+  <li>
+    <input
+      type="search"
+      class="nav-search"
+      placeholder="Search courses, HCP content…"
+    />
+  </li>
+          
+            <li>
+              <button
+                class="nav-cta-button"
+                onclick="window.location.href='contact.html'">
+                Request Demo
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-
+    </nav>
   <!-- CONTACT PAGE -->
   <main class="contact-page">
     <div class="container">
@@ -210,5 +246,6 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
