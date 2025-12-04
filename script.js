@@ -1288,13 +1288,7 @@ function setupNavBackground() {
   const nav = document.querySelector("nav");
   if (!nav) return;
 
-  const pageHome = document.getElementById("page-home");
-  const scrollElement = pageHome || window;
-
   function getScrollTop() {
-    if (pageHome) {
-      return pageHome.scrollTop;
-    }
     return window.scrollY || document.documentElement.scrollTop;
   }
 
@@ -1307,13 +1301,9 @@ function setupNavBackground() {
   }
 
   updateNavBackground();
-
-  if (pageHome) {
-    pageHome.addEventListener("scroll", updateNavBackground);
-  } else {
-    window.addEventListener("scroll", updateNavBackground);
-  }
+  window.addEventListener("scroll", updateNavBackground);
 }
+
 
 // --------------------------
 // SMOOTH SCROLL FOR #ANCHORS
@@ -1734,4 +1724,5 @@ function setupSnapScrollHome() {
     video.addEventListener("play", showControlsBriefly);
     video.addEventListener("pause", showControlsBriefly);
   });
+
 
