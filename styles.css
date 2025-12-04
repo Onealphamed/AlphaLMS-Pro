@@ -517,7 +517,7 @@ nav.scrolled {
 
 .target-users-infographic {
   padding: 80px 0;
-  background: #f9fafb;
+  background: #ffffff;
   text-align: center;
 }
 
@@ -600,7 +600,7 @@ nav.scrolled {
 /* video journey */
 .user-journey {
   padding: 72px 0;
-  background: #f8fafc;
+  background: #ffffff;
 }
 
 .parent-container {
@@ -1989,7 +1989,7 @@ footer {
 
 .impact-metrics {
   padding: 100px 0 80px;
-  background: linear-gradient(180deg, #f9fafb 0%, #ffffff 60%);
+  background: #ffffff;
 }
 
 .impact-metrics .section-title {
@@ -3797,6 +3797,7 @@ footer {
   color: #475569;
   line-height: 1.55;
 }
+
 
 
 
