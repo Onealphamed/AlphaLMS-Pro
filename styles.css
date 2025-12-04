@@ -774,17 +774,15 @@ aspect-ratio: 1088 / 501;
 /* Stats banner */
 .stats-banner {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 150px));
-  gap: 35px;
+  grid-template-columns: repeat(6, minmax(0, 1fr)); /* desktop: 3 per row */
+  gap: 24px;
   background: linear-gradient(135deg, #4f8ef7 0%, #3a6ff0 100%);
-  padding: 45px 0px;
+  padding: 32px 32px;
   border-radius: 20px;
   box-shadow: 0 12px 40px rgba(99, 102, 241, 0.3);
-  justify-content: center;
-  position: relative;
-     width: 100%;         /* take full width of container */
-  max-width: 83vw;     /* but don’t become too wide on big screens */
-  margin: 0 auto; 
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .stat-item {
@@ -793,18 +791,52 @@ aspect-ratio: 1088 / 501;
 }
 
 .stat-value {
-  font-size: 48px;
+  font-size: 38px;
   font-weight: 900;
-  margin-bottom: 8px;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  margin-bottom: 6px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .stat-label {
-  font-size: 14px;
+  font-size: 13px;
   opacity: 0.9;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+/* Tablet: 2 columns */
+@media (max-width: 900px) {
+  .stats-banner {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    padding: 24px 20px;
+  }
+
+  .stat-value {
+    font-size: 32px;
+  }
+
+  .stat-label {
+    font-size: 12px;
+  }
+}
+
+/* Mobile: 1 column */
+@media (max-width: 600px) {
+  .stats-banner {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    padding: 20px 16px;
+  }
+
+  .stat-value {
+    font-size: 28px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+  }
 }
 
 /* Services */	
@@ -3792,6 +3824,7 @@ footer {
   color: #475569;
   line-height: 1.55;
 }
+
 
 
 
