@@ -8,11 +8,14 @@
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
+html,
+body {
+  margin: 0;
+  padding: 0;
   width: 100%;
-overflow-x: hidden;
-  scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;   /* ✅ only X, do NOT touch Y here */
+  /* DO NOT put overflow-y: hidden or overflow: hidden here */
 }
 
 img, video {
@@ -87,6 +90,7 @@ nav.scrolled {
   gap: 16px;
 }
 
+
 .logo {
   font-size: 24px;
   font-weight: 800;
@@ -116,6 +120,7 @@ nav.scrolled {
   flex-wrap: nowrap;
   margin-left: auto;     /* ✅ pushes all links + CTA as a group to the right */
 }
+
 
 .nav-links li {
   position: relative;
@@ -579,7 +584,6 @@ nav.scrolled {
 }
 
 /* video journey */
-/* video journey */
 .user-journey {
   padding: 72px 0;
   background: #f8fafc;
@@ -611,7 +615,6 @@ aspect-ratio: 1088 / 501;
   /* object-fit not needed if we let the video size itself */
   pointer-events: none;
 }
-
 
 .custom-play-btn {
   position: absolute;
@@ -836,37 +839,18 @@ aspect-ratio: 1088 / 501;
   }
 }
 
+
 /* Services */	
-.services-section {
+.service-section {
   padding: 80px 0;
   background: #ffffff;
 }
 
-/* Desktop: 3 columns */
 .services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 32px;
-  max-width: 1200px;
+  display: grid; 
+  grid-template-columns: repeat(2, 1fr); gap: 24px;
+  max-width: 1200px; 
   margin: 0 auto;
-  padding: 0 20px;      /* <-- Adds left-right margin inside container */
-}
-
-/* Tablet: 2 columns */
-@media (max-width: 992px) {
-  .services-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 28px;
-  }
-}
-
-/* Mobile: 1 column */
-@media (max-width: 600px) {
-  .services-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 0 16px;   /* tighter margin on mobile */
-  }
 }
 
 .service-card {
@@ -3755,38 +3739,16 @@ footer {
    FEATURES – SIX SERVICE CARDS
 ================================ */
 .service-cards-section {
+  padding: 80px 0;
   background: #ffffff;
-  padding: 60px 0 20px;
 }
 
 .service-card-grid {
   margin-top: 28px;
   display: grid;
-  grid-template-columns: repeat(3, minmax(260px, 1fr));   /* Desktop */
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
   gap: 24px;
-  max-width: 1200px;      /* keeps layout centered */
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 20px;        /* nice clean left-right spacing */
 }
-
-/* Tablet (approx < 992px): 2 columns */
-@media (max-width: 992px) {
-  .service-card-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-  }
-}
-
-/* Mobile (approx < 600px): 1 column */
-@media (max-width: 600px) {
-  .service-card-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    padding: 0 16px;      /* slightly tighter margin for phones */
-  }
-}
-
 
 .service-card {
   background: #ffffff;
@@ -3821,14 +3783,6 @@ footer {
   color: #475569;
   line-height: 1.55;
 }
-
-
-
-
-
-
-
-
 
 
 
