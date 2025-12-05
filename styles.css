@@ -3798,6 +3798,593 @@ footer {
   line-height: 1.55;
 }
 
+/* ===========================
+   ADMIN DASHBOARD – SHARED
+   =========================== */
+
+/* Grid layouts for cards */
+.admin-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.5fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+/* Generic card container */
+.card {
+  background: #020617;
+  border-radius: 18px;
+  padding: 20px 22px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.75);
+}
+
+.card h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #e5e7eb;
+  margin-bottom: 10px;
+}
+
+.card p,
+.card li,
+.card span {
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+.card-accent {
+  border-color: #6366f1;
+  box-shadow:
+    0 0 0 1px rgba(129, 140, 248, 0.65),
+    0 24px 60px rgba(37, 99, 235, 0.55);
+}
+
+/* Small helper note inside cards */
+.card-note {
+  font-size: 12px;
+  margin-top: 10px;
+  color: #9ca3af;
+}
+
+/* ===========================
+   MODULES – PILLS & LISTS
+   =========================== */
+
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.5);
+}
+
+.pill-green {
+  background: rgba(22, 163, 74, 0.1);
+  border-color: rgba(34, 197, 94, 0.4);
+  color: #bbf7d0;
+}
+
+.pill-blue {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.4);
+  color: #bfdbfe;
+}
+
+.pill-purple {
+  background: rgba(124, 58, 237, 0.1);
+  border-color: rgba(139, 92, 246, 0.4);
+  color: #e9d5ff;
+}
+
+.pill-amber {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.4);
+  color: #fed7aa;
+}
+
+.pill-red {
+  background: rgba(248, 113, 113, 0.1);
+  border-color: rgba(248, 113, 113, 0.4);
+  color: #fecaca;
+}
+
+/* Module lists */
+.module-list {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.module-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 14px;
+}
+
+.module-meta {
+  font-size: 12px;
+  color: #9ca3af;
+  white-space: nowrap;
+}
+
+/* Module type tiles */
+.module-type-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.module-type {
+  background: rgba(15, 23, 42, 0.85);
+  border-radius: 14px;
+  padding: 12px 13px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.module-type .emoji {
+  font-size: 20px;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+/* ===========================
+   ASSIGNMENTS – DEADLINES
+   =========================== */
+
+.deadline-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.deadline-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 13px;
+}
+
+.deadline-list span {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* ===========================
+   QUIZZES – METRICS + MINI BARS
+   =========================== */
+
+.quiz-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin: 14px 0;
+}
+
+.quiz-metrics > div {
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.metric-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #9ca3af;
+}
+
+.metric-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #e5e7eb;
+}
+
+.metric-success {
+  color: #4ade80;
+}
+
+/* Mini bar chart */
+.mini-bar-chart {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mini-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.mini-bar-label {
+  width: 110px;
+  color: #cbd5f5;
+}
+
+.mini-bar-track {
+  flex: 1;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(30, 64, 175, 0.45);
+  overflow: hidden;
+}
+
+.mini-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #6366f1, #22c55e);
+}
+
+.mini-bar-value {
+  width: 44px;
+  text-align: right;
+  font-size: 12px;
+  color: #e5e7eb;
+}
+
+/* Difficulty pills */
+.difficulty-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0 14px;
+}
+
+/* Bullet helper list */
+.bullet-list {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.bullet-list li {
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+/* ===========================
+   REPORTS – DASHBOARD CARDS
+   =========================== */
+
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+  margin: 18px 0 24px;
+}
+
+.dashboard-card {
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 16px;
+  padding: 14px 16px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.dashboard-card h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #9ca3af;
+  margin-bottom: 6px;
+}
+
+.dashboard-card .value {
+  font-size: 24px;
+  font-weight: 800;
+  color: #e5e7eb;
+}
+
+.dashboard-card .change {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #22c55e;
+}
+
+/* ===========================
+   REPORTS – BAR CHART + DONUTS
+   =========================== */
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.3fr);
+  gap: 22px;
+  margin-top: 10px;
+}
+
+.chart-card {
+  background: rgba(15, 23, 42, 0.95);
+  border-radius: 18px;
+  padding: 18px 18px 20px;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+}
+
+/* Vertical bars */
+.bar-chart {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.bar-row span:first-child {
+  width: 120px;
+  color: #e5e7eb;
+}
+
+.bar-track {
+  flex: 1;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(30, 64, 175, 0.45);
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #6366f1, #06b6d4);
+}
+
+.bar-value {
+  width: 44px;
+  text-align: right;
+  font-size: 12px;
+  color: #e5e7eb;
+}
+
+/* Donut charts */
+.donut-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 14px;
+}
+
+.donut {
+  position: relative;
+  width: 110px;
+  height: 110px;
+}
+
+.donut-ring {
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  border-width: 10px;
+  border-style: solid;
+  box-sizing: border-box;
+  opacity: 0.95;
+}
+
+.donut-live {
+  border-color: #22c55e;
+}
+
+.donut-ondemand {
+  border-color: #6366f1;
+}
+
+.donut-center {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.donut-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #e5e7eb;
+}
+
+.donut-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9ca3af;
+}
+
+/* ===========================
+   BEHAVIOUR HEATMAP
+   =========================== */
+
+.behavior-analytics-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
+  gap: 22px;
+  margin-top: 24px;
+}
+
+.behavior-card {
+  background: rgba(15, 23, 42, 0.95);
+  border-radius: 18px;
+  padding: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.behavior-heatmap {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.behavior-cell {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 6px;
+  background: #020617;
+  border: 1px solid rgba(30, 64, 175, 0.3);
+}
+
+/* Intensity levels using data-level attribute */
+.behavior-cell[data-level="low"] {
+  background: rgba(37, 99, 235, 0.15);
+}
+
+.behavior-cell[data-level="mid"] {
+  background: rgba(59, 130, 246, 0.5);
+}
+
+.behavior-cell[data-level="high"] {
+  background: rgba(96, 165, 250, 0.9);
+}
+
+.behavior-legend {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+}
+
+.behavior-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.behavior-legend .low::before,
+.behavior-legend .mid::before,
+.behavior-legend .high::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+}
+
+.behavior-legend .low::before {
+  background: rgba(37, 99, 235, 0.2);
+}
+
+.behavior-legend .mid::before {
+  background: rgba(59, 130, 246, 0.55);
+}
+
+.behavior-legend .high::before {
+  background: rgba(96, 165, 250, 0.95);
+}
+
+/* ===========================
+   LIVE EVENTS – SPARKLINE
+   =========================== */
+
+.sparkline-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 80px;
+}
+
+.sparkline-bars > div {
+  flex: 1;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #22c55e, #15803d);
+  opacity: 0.9;
+}
+
+/* ===========================
+   ADMIN CARDS – WHITE THEME
+   Overrides previous dark theme
+   =========================== */
+
+.card,
+.dashboard-card,
+.chart-card,
+.behavior-card {
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 16px !important;
+  padding: 18px 20px !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08) !important;
+  color: #111827 !important;
+}
+
+/* Headings inside cards */
+.card h2,
+.dashboard-card h3,
+.chart-card h2,
+.behavior-card h2 {
+  color: #111827 !important;
+}
+
+/* General text inside cards */
+.card p,
+.card li,
+.card span,
+.dashboard-card span,
+.chart-card span,
+.behavior-card span {
+  color: #374151 !important;
+}
+
+/* Metrics text */
+.metric-value,
+.value {
+  color: #111827 !important;
+}
+
+/* Pill styling stays color-based but text becomes dark */
+.pill,
+.module-meta,
+.mini-bar-value,
+.bar-value {
+  color: #111827 !important;
+}
+
+/* Donut chart labels */
+.donut-value,
+.donut-label {
+  color: #111827 !important;
+}
+
+/* Heatmap cells remain colored – border softened */
+.behavior-cell {
+  border: 1px solid #e5e7eb !important;
+}
+
+/* Remove dark backgrounds from module-type tiles */
+.module-type {
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  color: #111827 !important;
+}
+
+/* For sparkline bars – keep the bars colored but lighten them */
+.sparkline-bars > div {
+  background: linear-gradient(180deg, #4ade80, #22c55e) !important;
+}
 
 
 
