@@ -86,72 +86,84 @@
           </p>
         </div>
 
-        <form class="contact-form" id="contact-form" onsubmit="handleContactSubmit(event)">
-          <div class="form-row">
-            <div class="form-field">
-              <label for="first-name">First Name *</label>
-              <input type="text" id="first-name" name="first-name" required placeholder="John" />
-            </div>
-            <div class="form-field">
-              <label for="last-name">Last Name *</label>
-              <input type="text" id="last-name" name="last-name" required placeholder="Smith" />
-            </div>
-          </div>
+<form
+  class="contact-form"
+  id="contact-form"
+  action="https://formsubmit.co/info@onealphamed.com"
+  method="POST"
+>
+  <!-- FormSubmit config -->
+  <input type="hidden" name="_subject" value="New LMS Pro Demo Request">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="https://onealphamed.com/">
 
-          <div class="form-row">
-            <div class="form-field">
-              <label for="email">Email Address *</label>
-              <input type="email" id="email" name="email" required placeholder="john.smith@company.com" />
-            </div>
-            <div class="form-field">
-              <label for="phone">Phone Number *</label>
-              <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 123-4567" />
-            </div>
-          </div>
+  <div class="form-row">
+    <div class="form-field">
+      <label for="first-name">First Name *</label>
+      <input type="text" id="first-name" name="first-name" required placeholder="John" />
+    </div>
+    <div class="form-field">
+      <label for="last-name">Last Name *</label>
+      <input type="text" id="last-name" name="last-name" required placeholder="Smith" />
+    </div>
+  </div>
 
-          <div class="form-field">
-            <label for="company">Company/Organization *</label>
-            <input type="text" id="company" name="company" required placeholder="Your Company Name" />
-          </div>
+  <div class="form-row">
+    <div class="form-field">
+      <label for="email">Email Address *</label>
+      <input type="email" id="email" name="email" required placeholder="john.smith@company.com" />
+    </div>
+    <div class="form-field">
+      <label for="phone">Phone Number *</label>
+      <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 123-4567" />
+    </div>
+  </div>
 
-          <div class="form-field">
-            <label for="role">Your Role *</label>
-            <select id="role" name="role" required>
-              <option value="">Select your role</option>
-              <option value="educator">Educator/Teacher</option>
-              <option value="admin">School Administrator</option>
-              <option value="training">Corporate Training Manager</option>
-              <option value="entrepreneur">Entrepreneur/Course Creator</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
+  <div class="form-field">
+    <label for="company">Company/Organization *</label>
+    <input type="text" id="company" name="company" required placeholder="Your Company Name" />
+  </div>
 
-          <div class="form-field">
-            <label for="students">Expected Number of Students</label>
-            <select id="students" name="students">
-              <option value="">Select range</option>
-              <option value="1-50">1–50 students</option>
-              <option value="51-200">51–200 students</option>
-              <option value="201-500">201–500 students</option>
-              <option value="501-1000">501–1,000 students</option>
-              <option value="1000+">1,000+ students</option>
-            </select>
-          </div>
+  <div class="form-field">
+    <label for="role">Your Role *</label>
+    <select id="role" name="role" required>
+      <option value="">Select your role</option>
+      <option value="educator">Educator/Teacher</option>
+      <option value="admin">School Administrator</option>
+      <option value="training">Corporate Training Manager</option>
+      <option value="entrepreneur">Entrepreneur/Course Creator</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
 
-          <div class="form-field">
-            <label for="message">Tell us about your needs *</label>
-            <textarea
-              id="message"
-              name="message"
-              required
-              placeholder="Tell us what you're looking for in an LMS..."
-            ></textarea>
-          </div>
+  <div class="form-field">
+    <label for="students">Expected Number of Students</label>
+    <select id="students" name="students">
+      <option value="">Select range</option>
+      <option value="1-50">1–50 students</option>
+      <option value="51-200">51–200 students</option>
+      <option value="201-500">201–500 students</option>
+      <option value="501-1000">501–1,000 students</option>
+      <option value="1000+">1,000+ students</option>
+    </select>
+  </div>
 
-          <button type="submit" class="submit-button" id="submit-btn">
-            Request Demo
-          </button>
-        </form>
+  <div class="form-field">
+    <label for="message">Tell us about your needs *</label>
+    <textarea
+      id="message"
+      name="message"
+      required
+      placeholder="Tell us what you're looking for in an LMS..."
+    ></textarea>
+  </div>
+
+  <button type="submit" class="submit-button" id="submit-btn">
+    Request Demo
+  </button>
+</form>
+
       </div>
     </div>
   </main>
@@ -247,6 +259,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
