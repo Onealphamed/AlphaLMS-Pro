@@ -92,15 +92,12 @@
   action="https://api.web3forms.com/submit"
   method="POST"
 >
-
-  <form action="https://api.web3forms.com/submit" method="POST">
-  <input type="hidden" name="access_key" value="9a19add6-8925-46b3-bc50-a4aceccf632e">
-  <input type="text" name="name" required>
-  <input type="email" name="email" required>
-  <textarea name="message" required></textarea>
-  <button type="submit">Submit Form</button>
-</form>
-
+  <!-- 🔐 Web3Forms config -->
+  <input type="hidden" name="access_key" value="YOUR_REAL_ACCESS_KEY_HERE" />
+  <input type="hidden" name="subject" value="New LMS Pro Enquiry" />
+  <input type="hidden" name="from_name" value="AlphaLMS Pro Website" />
+  <!-- Optional: redirect page after success -->
+  <!-- <input type="hidden" name="redirect" value="https://yourdomain.com/thank-you.html" /> -->
 
   <div class="form-row">
     <div class="form-field">
@@ -116,68 +113,59 @@
   <div class="form-row">
     <div class="form-field">
       <label for="email">Email Address *</label>
-      <input type="email" id="email" name="email" required placeholder="john.smith@company.com" />
+      <input type="email" id="email" name="email" required placeholder="john.smith@hospital.com" />
     </div>
     <div class="form-field">
       <label for="phone">Phone Number *</label>
-      <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 123-4567" />
+      <input type="tel" id="phone" name="phone" required placeholder="+91 98xxxxxxx" />
     </div>
   </div>
 
   <div class="form-field">
-    <label for="company">Company/Organization *</label>
-    <input type="text" id="company" name="company" required placeholder="Your Company Name" />
+    <label for="company">Hospital / Organisation *</label>
+    <input type="text" id="company" name="company" required placeholder="Hospital / Pharma / MedEd org" />
   </div>
 
- <div class="form-field">
-  <label for="role">Your Role *</label>
-  <select id="role" name="role" required>
-    <option value="">Select your role</option>
+  <div class="form-field">
+    <label for="role">Your Role *</label>
+    <select id="role" name="role" required>
+      <option value="">Select your role</option>
 
-    <!-- Clinical Roles -->
-    <option value="doctor">Consultant / Specialist Doctor</option>
-    <option value="resident">Resident / Medical Officer</option>
-    <option value="nurse">Nurse / Nursing Educator</option>
-    <option value="allied-health">Allied Health Professional</option>
+      <!-- Clinical Roles -->
+      <option value="doctor">Consultant / Specialist Doctor</option>
+      <option value="resident">Resident / Medical Officer</option>
+      <option value="nurse">Nurse / Nursing Educator</option>
+      <option value="allied-health">Allied Health Professional</option>
 
-    <!-- Education & Training Roles -->
-    <option value="medical-educator">Medical Educator / Faculty</option>
-    <option value="training-manager">Clinical Training Manager</option>
-    <option value="cme-coordinator">CME / Medical Education Coordinator</option>
+      <!-- Education & Training Roles -->
+      <option value="medical-educator">Medical Educator / Faculty</option>
+      <option value="training-manager">Clinical Training Manager</option>
+      <option value="cme-coordinator">CME / Medical Education Coordinator</option>
 
-    <!-- Admin & Management -->
-    <option value="hospital-admin">Hospital / Department Administrator</option>
-    <option value="quality-lead">Quality & Accreditation Lead</option>
+      <!-- Admin & Management -->
+      <option value="hospital-admin">Hospital / Department Administrator</option>
+      <option value="quality-lead">Quality & Accreditation Lead</option>
 
-    <!-- Corporate / Pharma -->
-    <option value="pharma-medical">Pharma – Medical Affairs</option>
-    <option value="pharma-marketing">Pharma – Marketing / Brand Manager</option>
+      <!-- Corporate / Pharma -->
+      <option value="pharma-medical">Pharma – Medical Affairs</option>
+      <option value="pharma-marketing">Pharma – Marketing / Brand Manager</option>
 
-    <!-- Other -->
-    <option value="other">Other</option>
-  </select>
-</div>
+      <option value="other">Other</option>
+    </select>
+  </div>
 
-
-<div class="form-field">
-  <label for="students">Expected Number of Learners</label>
-  <select id="students" name="students">
-    <option value="">Select range</option>
-
-    <!-- Small Clinics / Individual Departments -->
-    <option value="1-25">1–25 HCPs</option>
-    <option value="26-75">26–75 HCPs</option>
-
-    <!-- Medium Hospitals / Training Cohorts -->
-    <option value="76-200">76–200 HCPs</option>
-    <option value="201-500">201–500 HCPs</option>
-
-    <!-- Large Hospitals / Pharma Programs -->
-    <option value="501-1000">501–1,000 HCPs</option>
-    <option value="1000+">1,000+ HCPs</option>
-  </select>
-</div>
-
+  <div class="form-field">
+    <label for="students">Expected Number of Learners</label>
+    <select id="students" name="students">
+      <option value="">Select range</option>
+      <option value="1-25">1–25 HCPs</option>
+      <option value="26-75">26–75 HCPs</option>
+      <option value="76-200">76–200 HCPs</option>
+      <option value="201-500">201–500 HCPs</option>
+      <option value="501-1000">501–1,000 HCPs</option>
+      <option value="1000+">1,000+ HCPs</option>
+    </select>
+  </div>
 
   <div class="form-field">
     <label for="message">Tell us about your needs *</label>
@@ -185,14 +173,15 @@
       id="message"
       name="message"
       required
-      placeholder="Tell us what you're looking for in an LMS..."
+      placeholder="Eg. Multi-specialty HCP LMS, CME tracking, launch-specific pathways, territory-wise analytics…"
     ></textarea>
   </div>
 
-  <button type="submit" class="submit-button" id="submit-btn">
-    Request a meeting
+  <button type="submit" class="submit-button">
+    Request Demo
   </button>
 </form>
+
 
       </div>
     </div>
@@ -289,6 +278,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
