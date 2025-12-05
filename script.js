@@ -1187,20 +1187,6 @@ function switchStudentView(viewName, el) {
   window.scrollTo({ top: layoutTop, behavior: "smooth" });
 }
 
-// --------------------------
-// CONTACT FORM – FAST AJAX SUBMIT
-// --------------------------
-function setupContactForm() {
-  const form = document.getElementById("contact-form");
-  const btn = document.getElementById("submit-btn");
-  if (!form || !btn) return;
-
-  form.addEventListener("submit", () => {
-    btn.disabled = true;
-    btn.textContent = "Sending...";
-  });
-}
-
 
 // --------------------------
 // MAIN DOMContentLoaded
@@ -1217,7 +1203,6 @@ document.addEventListener("DOMContentLoaded", () => {
   extendGlobalSearchWithSuggestions(); // ⭐ AI suggestions on top
   setupSnapScrollHome();
   setupLogoCarousel();
-  setupContactForm();
 });
 
 
@@ -1738,6 +1723,7 @@ function setupSnapScrollHome() {
     video.addEventListener("play", showControlsBriefly);
     video.addEventListener("pause", showControlsBriefly);
   });
+
 
 
 
