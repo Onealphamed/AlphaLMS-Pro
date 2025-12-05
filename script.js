@@ -1192,44 +1192,12 @@ function switchStudentView(viewName, el) {
 // --------------------------
 function setupContactForm() {
   const form = document.getElementById("contact-form");
-  if (!form) return;
+  const btn = document.getElementById("submit-btn");
+  if (!form || !btn) return;
 
-  const submitBtn = document.getElementById("submit-btn");
-  const FORM_ENDPOINT = "https://formsubmit.co/ajax/info@onealphamed.com"; // <- put your email
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault(); // stop normal slow submit
-
-    // UI: show loading state
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Sending...";
-    }
-
-    try {
-      const res = await fetch(FORM_ENDPOINT, {
-        method: "POST",
-        headers: {
-          "Accept": "application/json",
-        },
-          // send all form fields + hidden fields
-        body: new FormData(form),
-      });
-
-      if (res.ok) {
-        form.reset();
-        alert("Thank you! Your demo request has been sent.");
-      } else {
-        alert("Something went wrong while sending. Please try again in a bit.");
-      }
-    } catch (err) {
-      alert("Network error. Please check your internet and try again.");
-    } finally {
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Request Demo";
-      }
-    }
+  form.addEventListener("submit", () => {
+    btn.disabled = true;
+    btn.textContent = "Sending...";
   });
 }
 
@@ -1770,6 +1738,7 @@ function setupSnapScrollHome() {
     video.addEventListener("play", showControlsBriefly);
     video.addEventListener("pause", showControlsBriefly);
   });
+
 
 
 
