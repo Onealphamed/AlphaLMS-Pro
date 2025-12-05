@@ -79,10 +79,10 @@
     <div class="container">
       <div class="contact-container">
         <div class="contact-header">
-          <h1>Request a Demo</h1>
+          <h1>Request Form</h1>
           <p>
-            Fill out the form below and our team will get back to you within 24 hours
-            to schedule your personalized demo.
+            Fill out the form below and our team will get back to you
+            to schedule a meeting with you.
           </p>
         </div>
 
@@ -122,29 +122,55 @@
     <input type="text" id="company" name="company" required placeholder="Your Company Name" />
   </div>
 
-  <div class="form-field">
-    <label for="role">Your Role *</label>
-    <select id="role" name="role" required>
-      <option value="">Select your role</option>
-      <option value="educator">Educator/Teacher</option>
-      <option value="admin">School Administrator</option>
-      <option value="training">Corporate Training Manager</option>
-      <option value="entrepreneur">Entrepreneur/Course Creator</option>
-      <option value="other">Other</option>
-    </select>
-  </div>
+ <div class="form-field">
+  <label for="role">Your Role *</label>
+  <select id="role" name="role" required>
+    <option value="">Select your role</option>
 
-  <div class="form-field">
-    <label for="students">Expected Number of Students</label>
-    <select id="students" name="students">
-      <option value="">Select range</option>
-      <option value="1-50">1–50 students</option>
-      <option value="51-200">51–200 students</option>
-      <option value="201-500">201–500 students</option>
-      <option value="501-1000">501–1,000 students</option>
-      <option value="1000+">1,000+ students</option>
-    </select>
-  </div>
+    <!-- Clinical Roles -->
+    <option value="doctor">Consultant / Specialist Doctor</option>
+    <option value="resident">Resident / Medical Officer</option>
+    <option value="nurse">Nurse / Nursing Educator</option>
+    <option value="allied-health">Allied Health Professional</option>
+
+    <!-- Education & Training Roles -->
+    <option value="medical-educator">Medical Educator / Faculty</option>
+    <option value="training-manager">Clinical Training Manager</option>
+    <option value="cme-coordinator">CME / Medical Education Coordinator</option>
+
+    <!-- Admin & Management -->
+    <option value="hospital-admin">Hospital / Department Administrator</option>
+    <option value="quality-lead">Quality & Accreditation Lead</option>
+
+    <!-- Corporate / Pharma -->
+    <option value="pharma-medical">Pharma – Medical Affairs</option>
+    <option value="pharma-marketing">Pharma – Marketing / Brand Manager</option>
+
+    <!-- Other -->
+    <option value="other">Other</option>
+  </select>
+</div>
+
+
+<div class="form-field">
+  <label for="students">Expected Number of Learners</label>
+  <select id="students" name="students">
+    <option value="">Select range</option>
+
+    <!-- Small Clinics / Individual Departments -->
+    <option value="1-25">1–25 HCPs</option>
+    <option value="26-75">26–75 HCPs</option>
+
+    <!-- Medium Hospitals / Training Cohorts -->
+    <option value="76-200">76–200 HCPs</option>
+    <option value="201-500">201–500 HCPs</option>
+
+    <!-- Large Hospitals / Pharma Programs -->
+    <option value="501-1000">501–1,000 HCPs</option>
+    <option value="1000+">1,000+ HCPs</option>
+  </select>
+</div>
+
 
   <div class="form-field">
     <label for="message">Tell us about your needs *</label>
@@ -157,7 +183,7 @@
   </div>
 
   <button type="submit" class="submit-button" id="submit-btn">
-    Request Demo
+    Request a meeting
   </button>
 </form>
 
@@ -256,6 +282,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
