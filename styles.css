@@ -4308,7 +4308,7 @@ footer {
 
 .sparkline-bars > div {
   flex: 1;
-  border-radius: 999px;
+  border-radius: 10px;
   background: linear-gradient(180deg, #22c55e, #15803d);
   opacity: 0.9;
 }
@@ -4385,6 +4385,7 @@ footer {
 .sparkline-bars > div {
   background: linear-gradient(180deg, #4ade80, #22c55e) !important;
 }
+
 
 
 
