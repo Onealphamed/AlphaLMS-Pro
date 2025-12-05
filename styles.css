@@ -4386,6 +4386,19 @@ footer {
   background: linear-gradient(180deg, #4ade80, #22c55e) !important;
 }
 
+/* CONTACT HERO */
+.hero-contact {
+  background-image: linear-gradient(
+      120deg,
+      rgba(15, 23, 42, 0.70),
+      rgba(30, 64, 175, 0.65)
+    ),
+    url("https://source.unsplash.com/featured/?hospital,meeting");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 
 
 
