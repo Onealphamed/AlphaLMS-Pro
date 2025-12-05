@@ -89,11 +89,18 @@
 <form
   class="contact-form"
   id="contact-form"
+  action="https://api.web3forms.com/submit"
+  method="POST"
 >
-  <!-- FormSubmit config -->
-  <input type="hidden" name="_subject" value="New LMS Pro Demo Request">
-  <input type="hidden" name="_template" value="table">
-  <input type="hidden" name="_captcha" value="false">
+
+  <form action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="9a19add6-8925-46b3-bc50-a4aceccf632e">
+  <input type="text" name="name" required>
+  <input type="email" name="email" required>
+  <textarea name="message" required></textarea>
+  <button type="submit">Submit Form</button>
+</form>
+
 
   <div class="form-row">
     <div class="form-field">
@@ -282,6 +289,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
