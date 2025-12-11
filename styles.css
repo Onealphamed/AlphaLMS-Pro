@@ -97,7 +97,7 @@ nav.scrolled {
 .logo {
   display: flex;
   flex-shrink: 1; /* allow shrinking */
-  align-items: center;
+  align-items: left;
   gap: 10px;
   cursor: pointer;
 }
@@ -4406,6 +4406,7 @@ footer {
    No media query needed — your current mobile rules
    remain the baseline (you already have @media max-width:900px).
 */
+
 
 
 
