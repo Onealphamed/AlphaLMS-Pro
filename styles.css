@@ -4451,12 +4451,7 @@ footer {
   .logo-text { font-size: 32px; margin-right: 28px; }
 }
 
-/* Utility: if navbar changes height somewhere else, this keeps the logo bounded
-   (optional — remove if you always keep navbar 60px) */
-.navbar, .header, nav {
-  height: 60px;
-  min-height: 60px;
-  box-sizing: border-box;
+
 
 
 
