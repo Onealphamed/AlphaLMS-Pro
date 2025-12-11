@@ -4466,26 +4466,6 @@ footer {
     max-width: 160px;
   }
 
-  /* Ensure hamburger (nav-toggle) can appear at the right side without shifting logo */
-  .nav-toggle {
-    display: block;
-    margin-left: auto; /* keeps the toggle at the far right */
-    flex-shrink: 0;
-  }
-
-  /* when nav links are still present, make sure they can wrap/shrink */
-  .nav-links {
-    margin-left: 12px;  /* small gap from logo; .nav-toggle will push whole group if used */
-    gap: 12px;
-    min-width: 0;
-  }
-
-  .nav-links button,
-  .nav-search {
-    min-width: 0;
-  }
-}
-
 /* small screens: cap the logo text very tightly to prevent layout pushes */
 @media (max-width: 600px) {
   .logo-text {
@@ -4494,6 +4474,7 @@ footer {
     margin-right: 8px;
   }
 }
+
 
 
 
