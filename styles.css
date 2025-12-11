@@ -2908,7 +2908,8 @@ footer {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 900px)
+{
 
   .container {
     padding: 0 16px;
@@ -4395,23 +4396,172 @@ footer {
   background: linear-gradient(180deg, #4ade80, #22c55e) !important;
 }
 
-/* NAVBAR / LOGO ALIGNMENT FIXES
-   Appended overrides to prevent the logo from shifting toward the center
-   when the viewport narrows. These rules are intentionally conservative
-   and designed to override the earlier conflicting properties
-   (flex-shrink, invalid properties and vendor-pref typos).
+/* ===========================
+   Responsive breakpoints
+   Mobile-first approach
+   Paste this at the end of styles.css
+   =========================== */
+
+/* ---------- BASE (mobile-first) ----------
+   No media query needed — your current mobile rules
+   remain the baseline (you already have @media max-width:900px).
 */
 
+/* ---------- Tablet (>= 601px) ---------- */
+@media (min-width: 601px) {
+  .container { padding: 0 20px; }
 
+  /* nav */
+  .nav-toggle { display: none; }
+  .nav-links {
+    position: static;
+    flex-direction: row;
+    gap: 14px;
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    max-height: none;
+    opacity: 1;
+    pointer-events: auto;
+    overflow: visible;
+  }
+  .nav-search { min-width: 220px; width: auto; }
 
+  /* typography */
+  .hero h1 { font-size: 40px; }
+  .hero p  { font-size: 16px; max-width: 640px; }
 
-/* Keep image fixed size and not a source of layout overflow */
-.logo-img {
-  height: 50px;
-  width: auto;
-  flex: 0 0 auto;
-  display: block;
+  /* grids */
+  .services-grid,
+  .ai-features-grid,
+  .feature-grid,
+  .hexagon-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .steps-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .user-grid-3x3 { grid-template-columns: repeat(2, 1fr); }
+  .specialty-grid, .hub-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* spacing */
+  .hero { padding: 88px 0 64px; }
+  .section-title { font-size: 34px; }
 }
+
+/* ---------- Small laptop / desktop bridge (>= 901px) ---------- */
+@media (min-width: 901px) {
+  .container { max-width: 1100px; padding: 0 28px; margin: 0 auto; }
+
+  /* nav */
+  .nav-content { gap: 22px; align-items: center; }
+  .logo-img { height: 56px; }
+  .nav-search { min-width: 260px; }
+
+  /* hero */
+  .hero { padding: 110px 0 90px; }
+  .hero h1 { font-size: 48px; }
+  .hero p  { font-size: 18px; }
+
+  .section-title { font-size: 38px; margin-bottom: 40px; }
+  .section-subtitle { font-size: 16px; margin-bottom: 44px; padding: 0 10px; }
+
+  /* grids expand */
+  .services-grid,
+  .ai-features-grid,
+  .feature-grid,
+  .hexagon-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .service-card-grid { grid-template-columns: repeat(3, minmax(260px,1fr)); }
+
+  .user-grid-3x3 { grid-template-columns: repeat(3, 1fr); }
+  .steps-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+
+  .admin-layout,
+  .student-layout { grid-template-columns: 280px 1fr; }
+  .student-sidebar { position: sticky; top: 120px; }
+}
+
+/* ---------- 14" laptop (>= 1366px) ----------
+   Typical 14" break like 1366, 1536 also common.
+*/
+@media (min-width: 1366px) {
+  .container { max-width: 1280px; padding: 0 36px; }
+
+  /* navbar */
+  .brand-logo { width: 14%; } 
+  .logo-img { height: 64px; }
+
+  .nav-search { min-width: 320px; }
+
+  /* hero & type */
+  .hero { padding: 140px 0 120px; }
+  .hero h1 { font-size: 56px; }
+  .hero p { font-size: 18px; max-width: 760px; }
+
+  .section-title { font-size: 44px; }
+
+  /* grids */
+  .services-grid,
+  .ai-features-grid,
+  .feature-grid,
+  .hexagon-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .user-grid-3x3 { grid-template-columns: repeat(4, 1fr); }
+
+  .logo-track img { height: 72px; }
+  .stats-banner { padding: 36px; }
+}
+
+/* ---------- 16" laptop (>= 1536px) ----------
+   Larger laptop displays (Dell XPS 15/16, MacBook Pro scaled)
+*/
+@media (min-width: 1536px) {
+  .container { max-width: 1400px; padding: 0 42px; }
+  .brand-logo { width: 13%; }
+  .logo-img { height: 72px; }
+
+  .nav-content { gap: 32px; }
+  .nav-search { min-width: 360px; }
+
+  .hero h1 { font-size: 64px; line-height: 1.06; }
+  .hero p  { font-size: 20px; max-width: 880px; }
+
+  .services-grid,
+  .ai-features-grid,
+  .feature-grid,
+  .hexagon-grid { grid-template-columns: repeat(4, 1fr); gap: 30px; }
+  .user-grid-3x3 { grid-template-columns: repeat(6, 1fr); }
+
+  .student-layout { grid-template-columns: 360px 1fr; padding: 64px 48px 96px; }
+  .logo-track img { height: 84px; }
+}
+
+/* ---------- Ultra / large desktop (>= 1920px) ---------- */
+@media (min-width: 1920px) {
+  .container { max-width: 1600px; padding: 0 60px; }
+  .brand-logo { width: 11%; }
+  .logo-img { height: 96px; }
+
+  .hero h1 { font-size: 88px; }
+  .hero p  { font-size: 22px; }
+
+  .section-title { font-size: 56px; margin-bottom: 56px; }
+  .services-grid,
+  .ai-features-grid,
+  .feature-grid,
+  .hexagon-grid { grid-template-columns: repeat(5, 1fr); gap: 36px; }
+
+  .stats-banner { grid-template-columns: repeat(6, minmax(0,1fr)); padding: 48px; }
+}
+
+/* ---------- Helpful utility tweaks ----------
+   Keep layout stable: prefer max-widths and scalable units.
+*/
+.container,
+.cert-inner,
+.parent-container { width: 100%; box-sizing: border-box; }
+
+img, video { max-width: 100%; height: auto; display: block; }
+
+
+
+
 
 
 
