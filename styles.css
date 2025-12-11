@@ -97,31 +97,36 @@ nav.scrolled {
 .logo {
   display: flex;
   flex-shrink: 1; /* allow shrinking */
-  align-items: left;
+  align-items: center;
   gap: 10px;
   cursor: pointer;
+  flex-shrink: 0;  
+  box-sizing: border-box;
 }
 
 .logo-img {
   height: 50px;          /* adjust to your preference */
   width: auto;
   display: block;
+     object-fit: contain;
 }
 
 .logo-text {
   font-size: 26px;
-  flex-shrink: 1;   /* allow shrinking */
   font-weight: 800;
-  color: #93eb35;        /* white for the nav */
-  webkit-background-clip: text;
-  webkit-text-fill-color: transparent;
-  background-clip: text;
-  splay: flex;
-  gap: 8px;
-  transition: transform 0.3s;
-  white-space: nowrap;
   margin-right: 20px;
-  flex-shrink: 0;
+  white-space: nowrap;     /* keep brand on one line */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 1;          /* allow text to shrink on narrow widths */
+  line-height: 1;
+  /* gradient text clip — corrected prefixes */
+  background: linear-gradient(90deg, #93eb35 0%, #6bd02a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;   /* non-prefixed fallback */
+  transition: transform 0.2s ease, font-size 0.2s ease;
+}
 
 }
 
@@ -4408,6 +4413,50 @@ footer {
 */
 
 
+/* Small screens (phones) — keep logo compact */
+@media (max-width: 600px) {
+  .logo-img { height: 40px; max-height: 44px; }
+  .logo-text { font-size: 18px; margin-right: 12px; }
+}
+
+/* Tablet (>= 601px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .logo-img { height: 46px; max-height: 50px; }
+  .logo-text { font-size: 20px; margin-right: 16px; }
+}
+
+/* Small laptop / bridge (>= 901px and < 1366px) */
+@media (min-width: 901px) and (max-width: 1365px) {
+  .logo-img { height: 52px; max-height: 56px; }
+  .logo-text { font-size: 24px; }
+}
+
+/* 14" laptop — targeted range (1366px — 1535px) */
+@media (min-width: 1366px) and (max-width: 1535px) {
+  .logo-img { height: 52px; max-height: 56px; } /* fits 60px nav comfortably */
+  .logo-text { font-size: 22px; }               /* slightly reduced to avoid overflow */
+  /* optionally reduce right margin to preserve space */
+  .logo-text { margin-right: 12px; }
+}
+
+/* 16" laptop and up (>= 1536px) */
+@media (min-width: 1536px) and (max-width: 1919px) {
+  .logo-img { height: 56px; max-height: 56px; }
+  .logo-text { font-size: 28px; margin-right: 22px; }
+}
+
+/* Ultra / large desktop (>= 1920px) */
+@media (min-width: 1920px) {
+  .logo-img { height: 56px; max-height: 56px; }
+  .logo-text { font-size: 32px; margin-right: 28px; }
+}
+
+/* Utility: if navbar changes height somewhere else, this keeps the logo bounded
+   (optional — remove if you always keep navbar 60px) */
+.navbar, .header, nav {
+  height: 60px;
+  min-height: 60px;
+  box-sizing: border-box;
 
 
 
