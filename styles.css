@@ -4395,6 +4395,106 @@ footer {
   background: linear-gradient(180deg, #4ade80, #22c55e) !important;
 }
 
+/* NAVBAR / LOGO ALIGNMENT FIXES
+   Appended overrides to prevent the logo from shifting toward the center
+   when the viewport narrows. These rules are intentionally conservative
+   and designed to override the earlier conflicting properties
+   (flex-shrink, invalid properties and vendor-pref typos).
+*/
+
+/* make sure the nav row fills available width and can shrink children properly */
+.nav-content {
+  width: 100%;
+  display: flex;            /* reaffirm layout mode */
+  align-items: center;
+  justify-content: flex-start; /* keep logo at left; .nav-links uses margin-left:auto */
+  gap: 16px;
+  min-width: 0;             /* allow flex items to shrink correctly */
+}
+
+/* Logo container: don't let it push other nav items */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  flex: 0 1 auto;    /* don't grow, but allow shrinking when necessary */
+  min-width: 0;      /* allow text inside to truncate instead of forcing layout shift */
+}
+
+/* Keep image fixed size and not a source of layout overflow */
+.logo-img {
+  height: 50px;
+  width: auto;
+  flex: 0 0 auto;
+  display: block;
+}
+
+/* Logo text: fix vendor prefix typos, remove invalid props and allow truncation */
+.logo-text {
+  font-size: 26px;
+  font-weight: 800;
+  color: #93eb35;
+  -webkit-background-clip: text;   /* corrected vendor prefix */
+  -webkit-text-fill-color: transparent; /* corrected vendor prefix */
+  background-clip: text;
+  white-space: nowrap;
+  overflow: hidden;          /* prevent long text from pushing layout */
+  text-overflow: ellipsis;   /* show ellipsis when truncated */
+  max-width: 320px;          /* caps the width so nav links remain right-aligned */
+  transition: transform 0.3s;
+  margin-right: 20px;
+  flex: 0 1 auto;            /* allow shrinking but not growing */
+}
+
+/* slightly reduce size earlier than the nav collapse point so logo doesn't drift */
+@media (max-width: 1200px) {
+  .logo-text {
+    font-size: 20px;
+    max-width: 220px;
+    margin-right: 12px;
+  }
+}
+
+/* mobile / narrow screens adjustments:
+   keep logo on the left, make nav-toggle visible if needed (existing rules hid it),
+   further limit logo-text width so it never centers by pushing other flex items.
+*/
+@media (max-width: 900px) {
+  .logo-text {
+    font-size: 18px;
+    max-width: 160px;
+  }
+
+  /* Ensure hamburger (nav-toggle) can appear at the right side without shifting logo */
+  .nav-toggle {
+    display: block;
+    margin-left: auto; /* keeps the toggle at the far right */
+    flex-shrink: 0;
+  }
+
+  /* when nav links are still present, make sure they can wrap/shrink */
+  .nav-links {
+    margin-left: 12px;  /* small gap from logo; .nav-toggle will push whole group if used */
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .nav-links button,
+  .nav-search {
+    min-width: 0;
+  }
+}
+
+/* small screens: cap the logo text very tightly to prevent layout pushes */
+@media (max-width: 600px) {
+  .logo-text {
+    font-size: 16px;
+    max-width: 120px;
+    margin-right: 8px;
+  }
+}
+
 
 
 
